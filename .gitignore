@@ -1,0 +1,37 @@
+# Security - Hide Cloudflare infrastructure details
+wrangler.toml
+wrangler.jsonc
+*.toml
+*.env
+.env*
+.wrangler/
+node_modules/
+.DS_Store
+
+# Database IDs and API keys
+**/database_id*
+**/api_key*
+**/secret*
+**/credentials*
+
+# Cloudflare-specific files (competitive advantage)
+cloudflare-config/
+cf-*.json
+workers-*.js
+dispatch-*.json
+
+# Logs and temporary files
+*.log
+.cache/
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Package locks (can be regenerated)
+package-lock.json
+yarn.lock
