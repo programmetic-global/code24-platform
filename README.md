@@ -1,4 +1,4 @@
-# AutoWeb Platform
+# Code24 Platform
 
 **Voice to Self-Optimizing Website in 60 seconds**
 
@@ -20,8 +20,8 @@ my-dispatcher/            # Customer site routing and dispatch logic
 customer-worker/          # Template for customer site workers
 customer-worker-template.js # Reusable customer worker template
 schema-core.sql           # Database schema for goal-based analytics
-autoweb-selflearning-plan.md # Product development roadmap
-autoweb_prd.md           # Product requirements document
+code24-selflearning-plan.md # Product development roadmap
+code24_prd.md           # Product requirements document
 ```
 
 ## Business Model

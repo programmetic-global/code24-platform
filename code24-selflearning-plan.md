@@ -1,4 +1,4 @@
-# AutoWeb Self-Learning Platform
+# Code24 Self-Learning Platform
 ## Complete No-Code Implementation Plan
 
 ---
@@ -1064,7 +1064,7 @@ Results: Trial signups +67%, better user quality
 - Partnerships: Web design agencies (white-label)
 
 **Viral Mechanics:**
-- "Powered by AutoWeb" badge (clickable)
+- "Powered by Code24" badge (clickable)
 - Referral program: Give $50, get $50
 - Template marketplace (users share)
 - Weekly showcase of best-performing sites

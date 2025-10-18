@@ -1,5 +1,5 @@
 /**
- * AutoWeb Customer Worker Template
+ * Code24 Customer Worker Template
  * Deployed via Workers for Platforms to customer subdomains
  */
 
@@ -182,7 +182,7 @@ function generateSiteHTML(config) {
         </div>
         
         <div class="powered-by">
-          <p>Powered by <a href="https://code24.dev">AutoWeb Platform</a> - Goal-based website optimization</p>
+          <p>Powered by <a href="https://code24.dev">Code24 Platform</a> - Goal-based website optimization</p>
         </div>
       </div>
     </body>

@@ -1,5 +1,5 @@
 /**
- * Enhanced AutoWeb Platform Dispatcher
+ * Enhanced Code24 Platform Dispatcher
  * Integrates R2 storage, Workers for Platforms, and goal-based analytics
  */
 
@@ -395,7 +395,7 @@ function generateSiteHTML(name, businessType, primaryGoal, description) {
       </div>
       
       <div class="powered-by">
-        <p>Powered by <a href="https://code24.dev">AutoWeb Platform</a> - AI-generated and continuously optimized</p>
+        <p>Powered by <a href="https://code24.dev">Code24 Platform</a> - AI-generated and continuously optimized</p>
       </div>
     </body>
     </html>
@@ -510,7 +510,7 @@ function createSiteNotFoundResponse(subdomain) {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Site Not Found - AutoWeb</title>
+      <title>Site Not Found - Code24</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
         body { 
@@ -559,7 +559,7 @@ function serveMainPlatform() {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>AutoWeb Platform - From Idea to Self-Optimizing Website in 60 Seconds</title>
+      <title>Code24 Platform - From Idea to Self-Optimizing Website in 60 Seconds</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -624,7 +624,7 @@ function serveMainPlatform() {
     <body>
       <div class="container">
         <div class="header">
-          <div class="logo">🚀 AutoWeb</div>
+          <div class="logo">🚀 Code24</div>
           <div class="tagline">From Idea to Self-Optimizing Website in 60 Seconds</div>
           <a href="/generate" class="btn">🎤 Build My Website Now</a>
         </div>
@@ -677,7 +677,7 @@ function serveGenerationInterface() {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Generate Your Website - AutoWeb</title>
+      <title>Generate Your Website - Code24</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }

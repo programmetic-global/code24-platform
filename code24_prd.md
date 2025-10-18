@@ -1,15 +1,15 @@
-# AutoWeb Platform - Product Requirements Document
+# Code24 Platform - Product Requirements Document
 
 ## Executive Summary
 
-**Product Name:** AutoWeb  
+**Product Name:** Code24  
 **Tagline:** "From Idea to Self-Optimizing Website in 60 Seconds"  
 **Version:** 1.0  
 **Date:** October 2025  
 **Document Owner:** Product Team
 
 ### Vision Statement
-AutoWeb revolutionizes website creation and optimization by combining AI-powered generation with continuous self-improvement. We enable anyone to launch a professional website through voice or text, and empower existing website owners to achieve superior performance through automated optimization.
+Code24 revolutionizes website creation and optimization by combining AI-powered generation with continuous self-improvement. We enable anyone to launch a professional website through voice or text, and empower existing website owners to achieve superior performance through automated optimization.
 
 ### Business Objectives
 - Enable non-technical users to create production-ready websites in under 3 minutes
@@ -69,7 +69,7 @@ AutoWeb revolutionizes website creation and optimization by combining AI-powered
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                  AutoWeb Platform                    │
+│                  Code24 Platform                    │
 ├─────────────────────────────────────────────────────┤
 │                                                      │
 │  Solution 1: Optimize        Solution 2: Build      │
