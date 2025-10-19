@@ -1,0 +1,20 @@
+{
+  "name": "code24-ab-test-worker",
+  "version": "1.0.0",
+  "description": "Automated A/B testing with statistical significance for Code24 platform",
+  "main": "src/index.ts",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "test": "vitest"
+  },
+  "keywords": ["ab-testing", "optimization", "statistics", "cloudflare-workers", "code24"],
+  "author": "Code24 Platform",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241011.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4",
+    "wrangler": "^3.84.0"
+  }
+}

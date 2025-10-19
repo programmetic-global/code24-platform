@@ -1,0 +1,20 @@
+{
+  "name": "code24-ai-content-worker",
+  "version": "1.0.0",
+  "description": "AI-powered content optimization and generation for Code24 platform",
+  "main": "src/index.ts",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "test": "vitest"
+  },
+  "keywords": ["ai", "content-optimization", "conversion", "cloudflare-workers", "code24"],
+  "author": "Code24 Platform",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241011.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4",
+    "wrangler": "^3.84.0"
+  }
+}
