@@ -1,0 +1,324 @@
+/* Professional UI/UX Icons and Elements */
+/* Using CSS-only icons and modern design elements */
+
+/* Icon containers */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.icon-lg {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+}
+
+.icon-xl {
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+}
+
+/* Brand/Logo Icons */
+.icon-brand {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 700;
+}
+
+.icon-brand::before {
+  content: "C24";
+}
+
+/* Action Icons */
+.icon-optimize {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+}
+
+.icon-optimize::before {
+  content: "OPT";
+}
+
+.icon-generate {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+}
+
+.icon-generate::before {
+  content: "GEN";
+}
+
+.icon-analyze {
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  color: white;
+}
+
+.icon-analyze::before {
+  content: "SCAN";
+}
+
+/* Feature Icons */
+.icon-security {
+  background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+  color: white;
+}
+
+.icon-security::before {
+  content: "SEC";
+}
+
+.icon-speed {
+  background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+  color: white;
+}
+
+.icon-speed::before {
+  content: "FAST";
+}
+
+.icon-quality {
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  color: white;
+}
+
+.icon-quality::before {
+  content: "PRO";
+}
+
+.icon-results {
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  color: white;
+}
+
+.icon-results::before {
+  content: "RSLT";
+}
+
+.icon-features {
+  background: linear-gradient(135deg, #fd7e14 0%, #d63031 100%);
+  color: white;
+}
+
+.icon-features::before {
+  content: "FEAT";
+}
+
+.icon-service {
+  background: linear-gradient(135deg, #00b894 0%, #55a3ff 100%);
+  color: white;
+}
+
+.icon-service::before {
+  content: "SERV";
+}
+
+/* Status/Process Icons */
+.icon-target {
+  background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+  color: white;
+}
+
+.icon-target::before {
+  content: "TGT";
+}
+
+.icon-analytics {
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  color: white;
+}
+
+.icon-analytics::before {
+  content: "DATA";
+}
+
+.icon-deploy {
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  color: white;
+}
+
+.icon-deploy::before {
+  content: "LIVE";
+}
+
+.icon-success {
+  background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);
+  color: white;
+}
+
+.icon-success::before {
+  content: "✓";
+}
+
+/* Badge Elements */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-premium {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.badge-new {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+}
+
+.badge-pro {
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  color: white;
+}
+
+.badge-featured {
+  background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+  color: white;
+}
+
+/* Progress Indicators */
+.progress-ring {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #e1e5e9;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e1e5e9;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Card Elements */
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e5e9;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card .icon {
+  margin-bottom: 16px;
+}
+
+.feature-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #718096;
+  line-height: 1.5;
+}
+
+/* Button Enhancements */
+.btn-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-with-icon .icon {
+  margin-right: 0;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Status Indicators */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-success {
+  background: #f0fff4;
+  color: #22543d;
+  border: 1px solid #9ae6b4;
+}
+
+.status-warning {
+  background: #fffaf0;
+  color: #744210;
+  border: 1px solid #fbd38d;
+}
+
+.status-info {
+  background: #ebf8ff;
+  color: #2c5282;
+  border: 1px solid #90cdf4;
+}
+
+.status-processing {
+  background: #f7fafc;
+  color: #4a5568;
+  border: 1px solid #cbd5e0;
+}
+
+/* Dividers */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #e1e5e9 50%, transparent 100%);
+  margin: 32px 0;
+}
+
+.section-divider-bold {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  margin: 40px 0;
+  border-radius: 1px;
+}

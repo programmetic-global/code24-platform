@@ -1,0 +1,33 @@
+{
+  "name": "code24-workers-api",
+  "version": "1.0.0",
+  "description": "Code24 Workers API Integration - Comprehensive worker management and deployment",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:staging": "wrangler deploy --env staging",
+    "deploy:production": "wrangler deploy --env production",
+    "tail": "wrangler tail",
+    "test": "vitest"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "api",
+    "worker-management",
+    "deployment",
+    "scaling",
+    "code24"
+  ],
+  "author": "Code24 Platform",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240129.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20240129.0"
+  }
+}

@@ -1,0 +1,50 @@
+name = "shared-analytics-staging"
+main = "src/index.ts"
+compatibility_date = "2025-10-11"
+compatibility_flags = ["global_fetch_strictly_public"]
+
+# Database connections
+[[d1_databases]]
+binding = "DB_MAIN"
+database_name = "code24-main-staging"
+database_id = "dd33b7f5-163f-41c9-898a-d4dcb6a51e5f"
+
+[[d1_databases]]
+binding = "DB_ANALYTICS"
+database_name = "code24-analytics-staging"
+database_id = "a4aa1d34-ad7a-4c66-bd77-b9d6a8b87a45"
+
+# R2 for analytics data and intelligence cache
+[[r2_buckets]]
+binding = "ANALYTICS_STORAGE"
+bucket_name = "code24dev-staging"
+
+# AI for analytics insights and intelligence generation
+[ai]
+binding = "AI"
+
+# Service bindings to all optimization workers
+[[services]]
+binding = "SEO_OPTIMIZER"
+service = "seo-optimizer-staging"
+
+[[services]]
+binding = "CONVERSION_OPTIMIZER"  
+service = "conversion-optimizer-staging"
+
+[[services]]
+binding = "PERFORMANCE_MONITOR"
+service = "performance-monitor-staging"
+
+[[services]]
+binding = "CROSS_SITE_LEARNING"
+service = "cross-site-learning-staging"
+
+[[services]]
+binding = "SITE_BUILDER"
+service = "site-builder-staging"
+
+# Environment variables
+[vars]
+PLATFORM_NAME = "Code24"
+ENVIRONMENT = "staging"

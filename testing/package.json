@@ -1,0 +1,29 @@
+{
+  "name": "code24-testing-suite",
+  "version": "1.0.0",
+  "description": "Comprehensive testing suite for Code24 platform integration and load testing",
+  "main": "run-tests.ts",
+  "scripts": {
+    "test": "npm run test:local",
+    "test:local": "tsx run-tests.ts local all",
+    "test:staging": "tsx run-tests.ts staging all",
+    "test:production": "tsx run-tests.ts production integration",
+    "test:integration": "tsx run-tests.ts local integration",
+    "test:database": "tsx run-tests.ts local database",
+    "test:security": "tsx run-tests.ts local security",
+    "test:load": "tsx integration-tests.ts --load-only",
+    "test:ci": "npm run test:integration && npm run test:security"
+  },
+  "keywords": ["testing", "integration", "load-testing", "cloudflare-workers", "code24"],
+  "author": "Code24 Platform",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

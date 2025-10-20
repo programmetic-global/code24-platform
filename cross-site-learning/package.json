@@ -1,0 +1,20 @@
+{
+  "name": "code24-cross-site-learning",
+  "version": "1.0.0",
+  "description": "Network intelligence and cross-site learning system for Code24 platform",
+  "main": "src/index.ts",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "test": "vitest"
+  },
+  "keywords": ["cross-site-learning", "network-intelligence", "pattern-recognition", "cloudflare-workers", "code24"],
+  "author": "Code24 Platform",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241011.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4",
+    "wrangler": "^3.84.0"
+  }
+}

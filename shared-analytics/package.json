@@ -1,0 +1,20 @@
+{
+  "name": "code24-shared-analytics",
+  "version": "1.0.0",
+  "description": "Unified analytics and intelligence platform for Code24 optimization workers",
+  "main": "src/index.ts",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "test": "vitest"
+  },
+  "keywords": ["unified-analytics", "platform-intelligence", "cross-worker-coordination", "cloudflare-workers", "code24"],
+  "author": "Code24 Platform",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241011.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4",
+    "wrangler": "^3.84.0"
+  }
+}
