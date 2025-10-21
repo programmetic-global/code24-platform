@@ -4,7 +4,7 @@ export default {
     const url = new URL(request.url);
     
     // Route to the latest Pages deployment with our updated platform
-    const pagesUrl = 'https://caf588d9.code24-staging-frontend.pages.dev';
+    const pagesUrl = 'https://15f00f6a.code24-staging-frontend.pages.dev';
     const targetUrl = new URL(url.pathname + url.search, pagesUrl);
     
     // Fetch from Pages
@@ -14,15 +14,18 @@ export default {
       body: request.body
     });
     
-    // Clone response and add cache headers
+    // Clone response and force fresh content
     const modifiedResponse = new Response(response.body, {
       status: response.status,
       statusText: response.statusText,
       headers: {
         ...response.headers,
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
         'Pragma': 'no-cache',
-        'Expires': '0'
+        'Expires': '0',
+        'Last-Modified': new Date().toUTCString(),
+        'ETag': `"${Date.now()}"`,
+        'X-Content-Fresh': 'true'
       }
     });
     

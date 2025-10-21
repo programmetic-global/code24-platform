@@ -1,0 +1,144 @@
+{
+  "name": "code24-design-mcp",
+  "version": "1.0.0",
+  "description": "MCP integration for Code24 Design Worker with multiple design service providers",
+  "mcpServers": {
+    "canva-connect": {
+      "command": "node",
+      "args": ["./servers/canva-server.js"],
+      "env": {
+        "CANVA_API_KEY": "${CANVA_API_KEY}",
+        "CANVA_CLIENT_ID": "${CANVA_CLIENT_ID}",
+        "CANVA_CLIENT_SECRET": "${CANVA_CLIENT_SECRET}"
+      }
+    },
+    "figma-api": {
+      "command": "node", 
+      "args": ["./servers/figma-server.js"],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "${FIGMA_ACCESS_TOKEN}"
+      }
+    },
+    "dall-e-integration": {
+      "command": "node",
+      "args": ["./servers/dalle-server.js"],
+      "env": {
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}"
+      }
+    },
+    "stability-ai": {
+      "command": "node",
+      "args": ["./servers/stability-server.js"],
+      "env": {
+        "STABILITY_API_KEY": "${STABILITY_API_KEY}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "create_design",
+      "description": "Create a new design using the best available service",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "designType": {
+            "type": "string",
+            "enum": ["logo", "banner", "social-post", "website-hero", "infographic", "business-card", "flyer", "presentation"]
+          },
+          "brandGuidelines": {
+            "type": "object",
+            "properties": {
+              "colors": {"type": "array", "items": {"type": "string"}},
+              "fonts": {"type": "array", "items": {"type": "string"}},
+              "style": {"type": "string"},
+              "industry": {"type": "string"}
+            }
+          },
+          "content": {
+            "type": "object", 
+            "properties": {
+              "title": {"type": "string"},
+              "subtitle": {"type": "string"},
+              "description": {"type": "string"},
+              "callToAction": {"type": "string"}
+            }
+          },
+          "dimensions": {
+            "type": "object",
+            "properties": {
+              "width": {"type": "number"},
+              "height": {"type": "number"},
+              "format": {"type": "string", "enum": ["square", "landscape", "portrait", "custom"]}
+            }
+          }
+        },
+        "required": ["designType", "content"]
+      }
+    },
+    {
+      "name": "optimize_design",
+      "description": "Optimize an existing design for better conversion",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "designUrl": {"type": "string"},
+          "optimizationGoal": {
+            "type": "string",
+            "enum": ["conversion", "engagement", "accessibility", "mobile-responsive", "brand-compliance"]
+          },
+          "metrics": {
+            "type": "object",
+            "properties": {
+              "currentCTR": {"type": "number"},
+              "currentConversion": {"type": "number"},
+              "targetAudience": {"type": "string"}
+            }
+          }
+        },
+        "required": ["designUrl", "optimizationGoal"]
+      }
+    },
+    {
+      "name": "analyze_design_performance",
+      "description": "Analyze design performance and suggest improvements",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "designUrl": {"type": "string"},
+          "metrics": {
+            "type": "object",
+            "properties": {
+              "views": {"type": "number"},
+              "clicks": {"type": "number"},
+              "conversions": {"type": "number"},
+              "bounceRate": {"type": "number"}
+            }
+          }
+        },
+        "required": ["designUrl"]
+      }
+    },
+    {
+      "name": "batch_design_generation",
+      "description": "Generate multiple design variations for A/B testing",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "baseDesign": {"type": "string"},
+          "variations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "aspect": {"type": "string", "enum": ["color", "layout", "copy", "cta", "imagery"]},
+                "variation": {"type": "string"}
+              }
+            }
+          },
+          "count": {"type": "number", "minimum": 2, "maximum": 10}
+        },
+        "required": ["baseDesign", "count"]
+      }
+    }
+  ]
+}

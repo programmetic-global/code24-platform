@@ -426,7 +426,7 @@ async function serveReactFrontend(env: Env, request: Request): Promise<Response>
   try {
     // Route directly to the latest Pages deployment with full URL
     const url = new URL(request.url);
-    const pagesUrl = `https://caf588d9.code24-staging-frontend.pages.dev${url.pathname}${url.search}`;
+    const pagesUrl = `https://9a73bc8b.code24-staging-frontend.pages.dev${url.pathname}${url.search}`;
     const response = await fetch(pagesUrl, {
       method: request.method,
       headers: {
