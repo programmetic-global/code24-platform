@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sparkles, Zap, TrendingUp, Shield, Globe, ArrowRight, Check, Play, Mic, Upload, Link2, Search, MessageSquare, Target, Brain, FlaskConical, LineChart, Mail, Wand2, Rocket, Layers, RefreshCw, Activity, Users, BarChart3, Palette, Cpu } from 'lucide-react';
+import Link from 'next/link';
+import { Menu, X, Sparkles, Zap, TrendingUp, Shield, Globe, ArrowRight, Check, Play, Mic, Upload, Link2, Search, MessageSquare, Target, Brain, FlaskConical, LineChart, Mail, Wand2, Rocket, Layers, RefreshCw, Activity, Users, BarChart3, Palette, Cpu, ChevronDown } from 'lucide-react';
 
 // Elite Workers API integration for self-learning
 const ELITE_WORKERS_API = process.env.NEXT_PUBLIC_ELITE_WORKERS_API || 'https://staging.code24.dev/elite';
@@ -32,6 +33,7 @@ const Code24Platform = () => {
   const [activeProduct, setActiveProduct] = useState('build');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [selfLearningData, setSelfLearningData] = useState<SelfLearningData>({
     conversionRate: 2.3,
     bounceRate: 67,
@@ -48,7 +50,7 @@ const Code24Platform = () => {
     orchestrator: false,
     anthropic: false,
     openai: false,
-    lastModelSelection: 'Claude (Creative)',
+    lastModelSelection: 'AI Orchestrator',
     activeTasks: 0
   });
   const [isLearning, setIsLearning] = useState(false);
@@ -112,7 +114,7 @@ const Code24Platform = () => {
           orchestrator: data.status === 'operational',
           anthropic: data.providers?.anthropic === 'healthy',
           openai: data.providers?.openai === 'healthy' || data.providers?.openai === 'monitoring',
-          lastModelSelection: data.lastSelection || 'Claude (Creative)',
+          lastModelSelection: data.lastSelection || 'AI Orchestrator',
           activeTasks: data.activeTasks || Math.floor(Math.random() * 5)
         });
       }
@@ -123,7 +125,7 @@ const Code24Platform = () => {
         orchestrator: true,
         anthropic: true,
         openai: true,
-        lastModelSelection: 'Claude (Creative)',
+        lastModelSelection: 'AI Orchestrator',
         activeTasks: Math.floor(Math.random() * 5)
       });
     }
@@ -337,7 +339,7 @@ const Code24Platform = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-12">
-              <div className="flex items-center space-x-3">
+              <Link href="/" className="flex items-center space-x-3">
                 <div className="relative">
                   <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-sm">
                     <div className="w-6 h-6 bg-white rounded-lg flex items-center justify-center">
@@ -350,27 +352,21 @@ const Code24Platform = () => {
                   <span className="text-xl font-bold">Code24</span>
                   <div className="text-xs text-blue-600 font-medium">Multi-LLM AI</div>
                 </div>
-              </div>
+              </Link>
 
               <div className="hidden md:flex items-center space-x-8">
-                <button 
-                  onClick={() => {
-                    setActiveProduct('build');
-                    trackInteraction('nav_click', { section: 'build' });
-                  }} 
-                  className={`text-sm font-medium transition-colors ${activeProduct === 'build' ? theme.text : theme.textSecondary}`}
-                >
-                  Build
-                </button>
-                <button 
-                  onClick={() => {
-                    setActiveProduct('optimize');
-                    trackInteraction('nav_click', { section: 'optimize' });
-                  }} 
-                  className={`text-sm font-medium transition-colors ${activeProduct === 'optimize' ? theme.text : theme.textSecondary}`}
-                >
-                  Optimize
-                </button>
+                <Link href="/features" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+                  Features
+                </Link>
+                <Link href="/pricing" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+                  Pricing
+                </Link>
+                <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+                  About
+                </Link>
+                <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+                  Contact
+                </Link>
               </div>
             </div>
 
@@ -403,8 +399,8 @@ const Code24Platform = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-24 pb-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
+      <section className="pt-32 pb-32 px-6">
+        <div className="max-w-7xl mx-auto text-center">
           {/* Live Multi-LLM Status */}
           <div className={`inline-flex items-center space-x-4 ${theme.cardBg} border ${theme.border} rounded-full px-6 py-3 mb-12 shadow-sm`}>
             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
@@ -459,15 +455,15 @@ const Code24Platform = () => {
           </div>
 
           {/* Everything Your Website Learns From Section */}
-          <div className="animate-fade-in delay-500 mb-16 max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8">Everything Your Website Learns From (24/7/365)</h2>
-            <p className="text-xl text-center text-gray-600 mb-12 max-w-4xl mx-auto">
-              Your AI Workers are always learning from multiple intelligence sources to make your website smarter every day
+          <div className="animate-fade-in delay-500 mb-24 max-w-7xl mx-auto">
+            <h2 className="text-5xl font-bold text-center mb-12 text-gray-900">Everything Your Website Learns From</h2>
+            <p className="text-xl text-center text-gray-600 mb-16 max-w-4xl mx-auto leading-relaxed">
+              Your AI Workers continuously analyze 6 intelligence sources to ensure your website beats competition every single day
             </p>
             
-            <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            <div className="grid lg:grid-cols-2 gap-12 mb-20">
               {/* YOUR Visitors */}
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-300 rounded-3xl p-6">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-300 rounded-3xl p-8">
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">📊</div>
                   <h3 className="text-2xl font-bold text-blue-600">YOUR Visitors</h3>
@@ -489,7 +485,7 @@ const Code24Platform = () => {
               </div>
               
               {/* Your Competitors */}
-              <div className="bg-gradient-to-br from-red-50 to-red-100 border border-red-300 rounded-3xl p-6">
+              <div className="bg-gradient-to-br from-red-50 to-red-100 border border-red-300 rounded-3xl p-8">
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">🏆</div>
                   <h3 className="text-2xl font-bold text-red-600">Your Competitors</h3>
@@ -511,7 +507,7 @@ const Code24Platform = () => {
               </div>
               
               {/* AI Search Engines (GEO) */}
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-300 rounded-3xl p-6">
+              <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-300 rounded-3xl p-8">
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">🤖</div>
                   <h3 className="text-2xl font-bold text-purple-600">AI Search Engines (GEO)</h3>
@@ -533,7 +529,7 @@ const Code24Platform = () => {
               </div>
               
               {/* Your Own Performance Data */}
-              <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-300 rounded-3xl p-6">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-300 rounded-3xl p-8">
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">📈</div>
                   <h3 className="text-2xl font-bold text-green-600">Your Performance Data</h3>
@@ -555,7 +551,7 @@ const Code24Platform = () => {
               </div>
               
               {/* Industry Trends */}
-              <div className="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-300 rounded-3xl p-6">
+              <div className="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-300 rounded-3xl p-8">
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">🌐</div>
                   <h3 className="text-2xl font-bold text-orange-600">Industry Trends</h3>
@@ -576,7 +572,7 @@ const Code24Platform = () => {
               </div>
               
               {/* Network Intelligence */}
-              <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-300 rounded-3xl p-6">
+              <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-300 rounded-3xl p-8">
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">💡</div>
                   <h3 className="text-2xl font-bold text-indigo-600">Network Intelligence</h3>
@@ -599,7 +595,7 @@ const Code24Platform = () => {
             
             {/* The Learning Never Stops */}
             <div className="bg-gradient-to-r from-gray-900 to-indigo-900 text-white rounded-3xl p-8 text-center">
-              <h3 className="text-3xl font-bold mb-8">The Learning Never Stops</h3>
+              <h3 className="text-3xl font-bold mb-8 text-white">The Learning Never Stops</h3>
               
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
@@ -637,7 +633,7 @@ const Code24Platform = () => {
 
           {/* The Brutal Truth Section */}
           <div className="animate-fade-in delay-500 mb-16 max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8">The Brutal Truth About Websites</h2>
+            <h2 className="text-4xl font-bold text-center mb-8 text-gray-900">The Brutal Truth About Websites</h2>
             
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Competitors' Websites */}
@@ -716,7 +712,7 @@ const Code24Platform = () => {
 
           {/* What Makes Code24 Impossible To Beat */}
           <div className="mb-16 max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8">What Makes Code24 Impossible To Beat</h2>
+            <h2 className="text-4xl font-bold text-center mb-8 text-gray-900">What Makes Code24 Impossible To Beat</h2>
             <div className="text-center mb-12">
               <h3 className="text-2xl font-semibold mb-4">The AI Worker Team Nobody Else Has</h3>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -863,7 +859,7 @@ const Code24Platform = () => {
           {/* Real Results Section */}
           <div className="mb-16 max-w-6xl mx-auto">
             <div className="bg-gradient-to-r from-gray-900 to-indigo-900 text-white rounded-3xl p-8 text-center">
-              <h2 className="text-4xl font-bold mb-8">Real Results From AI Worker Teams</h2>
+              <h2 className="text-4xl font-bold mb-8 text-white">Real Results From AI Worker Teams</h2>
               
               <div className="grid md:grid-cols-5 gap-6 mb-8">
                 <div className="bg-white/10 rounded-2xl p-4">
@@ -897,13 +893,13 @@ const Code24Platform = () => {
           </div>
 
           {/* Revolutionary BUILD vs OPTIMIZE Section */}
-          <div className="mb-16 max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">Two Paths. Same Destination. Impossible Advantage.</h2>
-              <p className="text-xl text-gray-600">Whether you build new or transform existing - you get the same AI Worker team working 24/7 forever</p>
+          <div className="mb-24 max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold mb-6 text-gray-900">Two Paths. Same Destination. Impossible Advantage.</h2>
+              <p className="text-xl text-gray-600 leading-relaxed">Whether you build new or transform existing - you get the same AI Worker team working 24/7 forever</p>
             </div>
             
-            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            <div className="grid lg:grid-cols-2 gap-12 mb-16">
               {/* BUILD Column */}
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-3xl p-8 transition-all hover:scale-105 animate-fade-in-left">
                 <div className="text-center mb-6">
@@ -1009,7 +1005,7 @@ const Code24Platform = () => {
             
             {/* Performance Guarantee Section */}
             <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black rounded-3xl p-8 text-center animate-fade-in-up">
-              <h3 className="text-4xl font-bold mb-4">🏆 The Code24 Performance Guarantee</h3>
+              <h3 className="text-4xl font-bold mb-4 text-gray-900">🏆 The Code24 Performance Guarantee</h3>
               <div className="text-2xl font-bold mb-6">We Guarantee Your Success</div>
               
               <div className="bg-white/90 rounded-2xl p-6 mb-6 max-w-4xl mx-auto">
@@ -1198,7 +1194,7 @@ const Code24Platform = () => {
 
           {/* WHY CODE24 IS IMPOSSIBLY BETTER */}
           <div className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center">WHY CODE24 IS IMPOSSIBLY BETTER</h2>
+            <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">WHY CODE24 IS IMPOSSIBLY BETTER</h2>
             
             <div className="bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-200 rounded-3xl p-8 mb-8">
               <div className="grid md:grid-cols-2 gap-8">
@@ -1513,6 +1509,105 @@ const Code24Platform = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ / How It Works Accordion Section */}
+      <section className={`py-24 px-6 ${theme.cardBgAlt} border-t ${theme.border}`}>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">How AI Workers Guarantee You Beat Competition</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Revolutionary questions answered about the only platform that makes your website impossible to beat
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                id: 'how-guarantee',
+                question: 'How can you guarantee my website will beat the competition?',
+                answer: 'Your AI Worker team learns from 6 intelligence sources 24/7: your visitors, your competitors, AI search engines (ChatGPT, Claude, Perplexity), performance data, industry trends, and our network of 500+ learning sites. They continuously optimize your website based on what works and what doesn\'t across your entire industry. Traditional websites stay static while yours gets smarter every single day.'
+              },
+              {
+                id: 'what-workers',
+                question: 'What exactly do the 7 AI Workers do for my website?',
+                answer: 'Each AI Worker has a specialized role: 1) Learner Worker analyzes all visitors and competitors 24/7, 2) Tester Worker runs continuous A/B tests and experiments, 3) Optimizer Worker improves conversion rates automatically, 4) Designer Worker updates visual design based on what converts, 5) Analyst Worker tracks performance and finds opportunities, 6) Conversion Worker optimizes sales funnels, 7) SEO Worker dominates both Google and AI search engines (GEO).'
+              },
+              {
+                id: 'build-vs-optimize',
+                question: 'Should I choose BUILD ($99/mo) or OPTIMIZE ($149/mo)?',
+                answer: 'Choose BUILD if you need a new website built from scratch by our AI Worker team in 3-8 minutes. Choose OPTIMIZE if you have an existing website that needs to be transformed into a learning machine that beats competitors. Both include the same 7 AI Workers working for you forever, with OPTIMIZE including additional resurrection and competitive analysis features.'
+              },
+              {
+                id: 'how-learning',
+                question: 'How does the continuous learning actually work?',
+                answer: 'Your website learns from: mouse movements and clicks from YOUR visitors, successful designs and copy from your competitors, mentions and authority signals in AI search engines, A/B test results and conversion data, industry design and feature trends, and patterns from our network of 500+ client sites across industries. This intelligence is processed 24/7 to make micro-improvements that compound into massive competitive advantages.'
+              },
+              {
+                id: 'geo-optimization',
+                question: 'What is GEO and why does it matter for my business?',
+                answer: 'GEO (Generative Engine Optimization) is optimization for AI search engines like ChatGPT, Claude, and Perplexity. While your competitors focus only on Google, your SEO Worker optimizes for both traditional search engines AND AI engines where millions of people now search. This gives you a massive first-mover advantage in the AI search era.'
+              },
+              {
+                id: 'roi-timeline',
+                question: 'When will I see results and what ROI can I expect?',
+                answer: 'Most customers see 25-50% improvement in key metrics within the first month, 200-400% performance increase by month 6, and market-leading position achieved within year 1. The learning compounds daily, so by year 2+ you become impossible for competitors to catch up to. Typical ROI is 300-500% within 90 days because your website keeps getting better while competitors\' sites decay.'
+              },
+              {
+                id: 'vs-traditional',
+                question: 'How is this different from traditional web development?',
+                answer: 'Traditional websites are built once and decay over time, requiring expensive redesigns every 2-3 years. Our AI Workers create learning machines that improve continuously. While competitors\' websites become outdated, yours becomes more competitive every day. You never need redesigns because your website evolves automatically based on market changes and visitor behavior.'
+              },
+              {
+                id: 'guarantee-promise',
+                question: 'What if my website doesn\'t beat the competition?',
+                answer: 'We guarantee your website will beat your competition or we work free until it does. This isn\'t just confidence - it\'s mathematical certainty. A learning website that improves 24/7 will always outperform static websites that decay over time. The compound learning effect makes your competitive advantage inevitable.'
+              }
+            ].map((faq) => (
+              <div 
+                key={faq.id} 
+                className={`${theme.cardBg} border ${theme.border} rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300`}
+              >
+                <button
+                  className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
+                  onClick={() => setOpenAccordion(openAccordion === faq.id ? null : faq.id)}
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-gray-500 transition-transform duration-200 flex-shrink-0 ${
+                      openAccordion === faq.id ? 'transform rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {openAccordion === faq.id && (
+                  <div className="px-6 pb-6">
+                    <div className="pt-2 border-t border-gray-100">
+                      <p className="text-gray-700 leading-relaxed mt-4">{faq.answer}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* CTA after FAQ */}
+          <div className="text-center mt-16 p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl border border-blue-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Build Your Competitive Advantage?</h3>
+            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+              Join the revolution. Get your AI Worker team and watch your website beat competition every single day.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 flex items-center space-x-2">
+                <span>Start Building - $99/mo</span>
+                <ArrowRight className="w-5 h-5" />
+              </button>
+              <button className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-all transform hover:scale-105 flex items-center space-x-2">
+                <span>Optimize Existing - $149/mo</span>
+                <Zap className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </div>
       </section>

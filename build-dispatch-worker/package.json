@@ -1,0 +1,28 @@
+{
+  "name": "code24-build-dispatch-worker",
+  "version": "1.0.0",
+  "description": "Code24 BUILD Workflow Dynamic Dispatch Worker for Workers for Platforms",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev --env staging",
+    "deploy": "wrangler deploy --env staging",
+    "deploy:production": "wrangler deploy --env production",
+    "build": "tsc",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "workers-for-platforms",
+    "dynamic-dispatch",
+    "build-workflow",
+    "ai-workers"
+  ],
+  "author": "Code24",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241011.0",
+    "typescript": "^5.0.0",
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {}
+}
