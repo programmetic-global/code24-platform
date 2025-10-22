@@ -8,7 +8,7 @@ const PricingPage = () => {
   const plans = [
     {
       name: "BUILD",
-      price: "$99",
+      price: "$149",
       period: "per month",
       description: "Perfect for new websites that need to dominate from day one",
       features: [
@@ -26,14 +26,15 @@ const PricingPage = () => {
         "Analytics and performance tracking",
         "Priority support"
       ],
-      cta: "Start Building Now",
+      cta: "Start 14-Day Trial",
       badge: "Most Popular",
       color: "blue",
-      icon: <ArrowRight className="w-6 h-6" />
+      icon: <ArrowRight className="w-6 h-6" />,
+      stripeUrl: "https://buy.stripe.com/28E8wO9vT2n01CtbfUdfG0i"
     },
     {
       name: "OPTIMIZE",
-      price: "$149", 
+      price: "$99", 
       period: "per month",
       description: "Transform your existing website into a learning machine that beats competition",
       features: [
@@ -52,10 +53,11 @@ const PricingPage = () => {
         "Advanced analytics and reporting",
         "Premium support and consultation"
       ],
-      cta: "Optimize Existing Site",
+      cta: "Start 14-Day Trial",
       badge: "Best Value",
       color: "indigo",
-      icon: <Zap className="w-6 h-6" />
+      icon: <Zap className="w-6 h-6" />,
+      stripeUrl: "https://buy.stripe.com/6oU5kC37v9PsepfcjYdfG0h"
     },
     {
       name: "ENTERPRISE",
@@ -246,10 +248,17 @@ const PricingPage = () => {
                     ))}
                   </div>
 
-                  <button className={`w-full ${colors.button} px-6 py-4 rounded-xl font-semibold transition-all transform hover:scale-105 flex items-center justify-center space-x-2`}>
-                    <span>{plan.cta}</span>
-                    {plan.icon}
-                  </button>
+                  {plan.stripeUrl ? (
+                    <a href={plan.stripeUrl} target="_blank" rel="noopener noreferrer" className={`w-full ${colors.button} px-6 py-4 rounded-xl font-semibold transition-all transform hover:scale-105 flex items-center justify-center space-x-2 text-center`}>
+                      <span>{plan.cta}</span>
+                      {plan.icon}
+                    </a>
+                  ) : (
+                    <button className={`w-full ${colors.button} px-6 py-4 rounded-xl font-semibold transition-all transform hover:scale-105 flex items-center justify-center space-x-2`}>
+                      <span>{plan.cta}</span>
+                      {plan.icon}
+                    </button>
+                  )}
                 </div>
               );
             })}
@@ -273,8 +282,8 @@ const PricingPage = () => {
                 <thead className="bg-gray-900 text-white">
                   <tr>
                     <th className="text-left p-6 font-semibold">Feature</th>
-                    <th className="text-center p-6 font-semibold">BUILD ($99/mo)</th>
-                    <th className="text-center p-6 font-semibold">OPTIMIZE ($149/mo)</th>
+                    <th className="text-center p-6 font-semibold">BUILD ($149/mo)</th>
+                    <th className="text-center p-6 font-semibold">OPTIMIZE ($99/mo)</th>
                     <th className="text-center p-6 font-semibold">Traditional Web Dev</th>
                   </tr>
                 </thead>
@@ -415,11 +424,11 @@ const PricingPage = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/#build" className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
-              <span>Start Building - $99/mo</span>
+              <span>Start Building - $149/mo</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/#optimize" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
-              <span>Optimize Existing - $149/mo</span>
+              <span>Optimize Existing - $99/mo</span>
               <Zap className="w-5 h-5" />
             </Link>
           </div>

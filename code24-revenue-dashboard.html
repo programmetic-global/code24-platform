@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code24 Revenue Machine Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* CODE24 REVENUE MACHINE DASHBOARD */
+    
+    :root {
+      --primary: #0F0F0F;
+      --secondary: #1A1A1A;
+      --accent: #00F5FF;
+      --accent2: #FF0080;
+      --text: #FFFFFF;
+      --text-muted: #A0A0A0;
+      --success: #00FF88;
+      --warning: #FFB800;
+      --danger: #FF4444;
+      --gradient: linear-gradient(135deg, #00F5FF 0%, #FF0080 100%);
+      --gradient-success: linear-gradient(135deg, #00FF88 0%, #00F5FF 100%);
+      
+      --font-heading: Inter, system-ui, sans-serif;
+      --font-body: Inter, system-ui, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--primary);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    /* Dashboard Layout */
+    .dashboard-container {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 0;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--secondary);
+      border-right: 1px solid rgba(255,255,255,0.1);
+      padding: 2rem 1rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .nav-menu {
+      list-style: none;
+    }
+
+    .nav-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: rgba(0,245,255,0.1);
+      color: var(--accent);
+    }
+
+    .nav-icon {
+      margin-right: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    .dashboard-header {
+      margin-bottom: 2rem;
+    }
+
+    .dashboard-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .dashboard-subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .metric-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 32px rgba(0,245,255,0.2);
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient);
+    }
+
+    .metric-card.success::before {
+      background: var(--gradient-success);
+    }
+
+    .metric-card.warning::before {
+      background: linear-gradient(135deg, #FFB800 0%, #FF6B35 100%);
+    }
+
+    .metric-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .metric-icon {
+      font-size: 1.5rem;
+      opacity: 0.8;
+    }
+
+    .metric-trend {
+      display: flex;
+      align-items: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      border-radius: 1rem;
+      background: rgba(0,255,136,0.2);
+      color: var(--success);
+    }
+
+    .metric-trend.negative {
+      background: rgba(255,68,68,0.2);
+      color: var(--danger);
+    }
+
+    .metric-trend::before {
+      content: '↗';
+      margin-right: 0.25rem;
+    }
+
+    .metric-trend.negative::before {
+      content: '↘';
+    }
+
+    .metric-value {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-subtitle {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* Revenue Machine Section */
+    .revenue-machine {
+      background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid rgba(0,255,136,0.3);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .revenue-machine::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,255,136,0.05) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .revenue-header {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .revenue-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .revenue-metrics {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .revenue-metric {
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .revenue-metric-value {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #00FF88 0%, #00F5FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .revenue-metric-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .revenue-metric-change {
+      font-size: 0.8rem;
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    /* Optimization Status */
+    .optimization-status {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .status-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .status-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .status-badge {
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      background: rgba(0,255,136,0.2);
+      color: var(--success);
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid var(--success);
+    }
+
+    .optimization-panels {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .optimization-panel {
+      background: rgba(255,255,255,0.05);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .panel-title {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .panel-impact {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      background: rgba(0,255,136,0.2);
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
+
+    .timeline {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .timeline-step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+
+    .timeline-step::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 100%;
+      height: 2px;
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-50%);
+    }
+
+    .timeline-step:last-child::after {
+      display: none;
+    }
+
+    .timeline-step.completed::after {
+      background: var(--success);
+    }
+
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      margin: 0 auto 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-step.completed .timeline-dot {
+      background: var(--success);
+      box-shadow: 0 0 10px var(--success);
+    }
+
+    .timeline-step.active .timeline-dot {
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    .timeline-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-step.completed .timeline-label {
+      color: var(--success);
+    }
+
+    .timeline-step.active .timeline-label {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.1); }
+    }
+
+    /* Charts Container */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .chart-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+
+    .chart-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .chart-placeholder {
+      height: 200px;
+      background: linear-gradient(135deg, rgba(0,245,255,0.1) 0%, rgba(255,0,128,0.1) 100%);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-style: italic;
+      border: 1px dashed rgba(255,255,255,0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .dashboard-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .sidebar {
+        display: none;
+      }
+      
+      .charts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .revenue-metrics {
+        grid-template-columns: 1fr;
+      }
+      
+      .main-content {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Code24</div>
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <span class="nav-icon">📊</span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-icon">🤖</span>
+              AI Workers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-icon">🎨</span>
+              Build Sites
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-icon">⚡</span>
+              Optimize
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-icon">📈</span>
+              Analytics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-icon">💰</span>
+              Revenue
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="dashboard-header">
+        <h1 class="dashboard-title">Revenue Machine Dashboard</h1>
+        <p class="dashboard-subtitle">Your websites are working 24/7 to generate revenue</p>
+      </header>
+
+      <!-- Key Metrics -->
+      <section class="metrics-grid">
+        <div class="metric-card success">
+          <div class="metric-header">
+            <span class="metric-icon">💰</span>
+            <span class="metric-trend">+47%</span>
+          </div>
+          <div class="metric-value" id="totalRevenue">$18,947</div>
+          <div class="metric-label">Total Revenue</div>
+          <div class="metric-subtitle">Last 30 days</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-icon">📈</span>
+            <span class="metric-trend">+23%</span>
+          </div>
+          <div class="metric-value" id="conversionRate">4.7%</div>
+          <div class="metric-label">Conversion Rate</div>
+          <div class="metric-subtitle">Industry avg: 2.4%</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-icon">👥</span>
+            <span class="metric-trend">+31%</span>
+          </div>
+          <div class="metric-value" id="totalVisitors">24,583</div>
+          <div class="metric-label">Website Visitors</div>
+          <div class="metric-subtitle">Last 30 days</div>
+        </div>
+
+        <div class="metric-card warning">
+          <div class="metric-header">
+            <span class="metric-icon">⚡</span>
+            <span class="metric-trend negative">-12%</span>
+          </div>
+          <div class="metric-value" id="loadSpeed">0.8s</div>
+          <div class="metric-label">Avg Load Speed</div>
+          <div class="metric-subtitle">Target: <0.5s</div>
+        </div>
+      </section>
+
+      <!-- Revenue Machine -->
+      <section class="revenue-machine">
+        <div class="revenue-header">
+          <h2 class="revenue-title">🤖 Revenue Machine Status</h2>
+          <p>AI Workers optimizing your websites 24/7/365</p>
+        </div>
+        <div class="revenue-metrics">
+          <div class="revenue-metric">
+            <span class="revenue-metric-value" id="optimizationsToday">127</span>
+            <div class="revenue-metric-label">Optimizations Today</div>
+            <div class="revenue-metric-change">+15 vs yesterday</div>
+          </div>
+          <div class="revenue-metric">
+            <span class="revenue-metric-value" id="abTestsRunning">23</span>
+            <div class="revenue-metric-label">A/B Tests Running</div>
+            <div class="revenue-metric-change">5 showing lift</div>
+          </div>
+          <div class="revenue-metric">
+            <span class="revenue-metric-value" id="aiRecommendations">8</span>
+            <div class="revenue-metric-label">AI Recommendations</div>
+            <div class="revenue-metric-change">Pending review</div>
+          </div>
+          <div class="revenue-metric">
+            <span class="revenue-metric-value">99.7%</span>
+            <div class="revenue-metric-label">Uptime</div>
+            <div class="revenue-metric-change">Last 30 days</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Optimization Status -->
+      <section class="optimization-status">
+        <div class="status-header">
+          <h2 class="status-title">Live Optimization Status</h2>
+          <span class="status-badge">3 Active</span>
+        </div>
+        
+        <div class="optimization-panels">
+          <div class="optimization-panel">
+            <div class="panel-header">
+              <span class="panel-title">Checkout Flow Optimization</span>
+              <span class="panel-impact">+12% CVR</span>
+            </div>
+            <div class="timeline">
+              <div class="timeline-step completed">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Analysis</div>
+              </div>
+              <div class="timeline-step completed">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">A/B Test</div>
+              </div>
+              <div class="timeline-step active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Deployment</div>
+              </div>
+              <div class="timeline-step">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Monitor</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="optimization-panel">
+            <div class="panel-header">
+              <span class="panel-title">Mobile Performance Enhancement</span>
+              <span class="panel-impact">+8% Speed</span>
+            </div>
+            <div class="timeline">
+              <div class="timeline-step completed">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Scan</div>
+              </div>
+              <div class="timeline-step active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Optimize</div>
+              </div>
+              <div class="timeline-step">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Test</div>
+              </div>
+              <div class="timeline-step">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Deploy</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="optimization-panel">
+            <div class="panel-header">
+              <span class="panel-title">SEO Content Optimization</span>
+              <span class="panel-impact">+25% Traffic</span>
+            </div>
+            <div class="timeline">
+              <div class="timeline-step completed">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Research</div>
+              </div>
+              <div class="timeline-step completed">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Generate</div>
+              </div>
+              <div class="timeline-step completed">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Review</div>
+              </div>
+              <div class="timeline-step active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Publish</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Charts -->
+      <section class="charts-grid">
+        <div class="chart-card">
+          <h3 class="chart-title">Revenue Trend (30 Days)</h3>
+          <div class="chart-placeholder">
+            📈 Revenue chart visualization would appear here
+          </div>
+        </div>
+        
+        <div class="chart-card">
+          <h3 class="chart-title">Conversion Funnel</h3>
+          <div class="chart-placeholder">
+            🎯 Funnel analysis visualization would appear here
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Animate metrics on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(() => {
+        animateMetrics();
+      }, 500);
+    });
+
+    function animateMetrics() {
+      // Revenue counter
+      animateCounter('totalRevenue', 0, 18947, '$', '');
+      
+      // Conversion rate
+      setTimeout(() => {
+        animateDecimal('conversionRate', 0, 4.7, '%');
+      }, 200);
+      
+      // Visitors counter
+      setTimeout(() => {
+        animateCounter('totalVisitors', 0, 24583, '', '');
+      }, 400);
+      
+      // Load speed
+      setTimeout(() => {
+        animateDecimal('loadSpeed', 3.2, 0.8, 's');
+      }, 600);
+      
+      // Revenue machine metrics
+      setTimeout(() => {
+        animateCounter('optimizationsToday', 0, 127, '', '');
+        animateCounter('abTestsRunning', 0, 23, '', '');
+        animateCounter('aiRecommendations', 0, 8, '', '');
+      }, 800);
+    }
+
+    function animateCounter(elementId, start, end, prefix = '', suffix = '') {
+      const element = document.getElementById(elementId);
+      if (!element) return;
+      
+      const duration = 2000;
+      const startTime = performance.now();
+      
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const current = start + (end - start) * easeOutCubic(progress);
+        
+        element.textContent = prefix + Math.floor(current).toLocaleString() + suffix;
+        
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+      
+      requestAnimationFrame(update);
+    }
+
+    function animateDecimal(elementId, start, end, suffix = '') {
+      const element = document.getElementById(elementId);
+      if (!element) return;
+      
+      const duration = 2000;
+      const startTime = performance.now();
+      
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const current = start + (end - start) * easeOutCubic(progress);
+        
+        element.textContent = current.toFixed(1) + suffix;
+        
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+      
+      requestAnimationFrame(update);
+    }
+
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    // Simulate real-time updates
+    setInterval(() => {
+      // Update optimization counts
+      const optimizations = document.getElementById('optimizationsToday');
+      if (optimizations) {
+        const current = parseInt(optimizations.textContent);
+        optimizations.textContent = current + Math.floor(Math.random() * 3);
+      }
+    }, 10000);
+
+    // Nav link interactions
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        
+        // Add active class to clicked link
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

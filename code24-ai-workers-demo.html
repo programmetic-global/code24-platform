@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code24 AI Workers - Revolutionary Website Building</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* CODE24 AI WORKERS INTERFACE - BASED ON PRD REQUIREMENTS */
+    
+    :root {
+      --primary: #0F0F0F;
+      --secondary: #1A1A1A;
+      --accent: #00F5FF;
+      --accent2: #FF0080;
+      --text: #FFFFFF;
+      --text-muted: #A0A0A0;
+      --success: #00FF88;
+      --warning: #FFB800;
+      --gradient: linear-gradient(135deg, #00F5FF 0%, #FF0080 100%);
+      
+      --font-heading: Inter, system-ui, sans-serif;
+      --font-body: Inter, system-ui, sans-serif;
+      
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+      --space-3xl: 4rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--primary);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 1.125rem;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero-ai-workers {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(ellipse at center, rgba(0,245,255,0.1) 0%, var(--primary) 50%);
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 0.9;
+      margin-bottom: 2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes textGlow {
+      from { filter: drop-shadow(0 0 20px rgba(0,245,255,0.5)); }
+      to { filter: drop-shadow(0 0 40px rgba(255,0,128,0.8)); }
+    }
+
+    /* AI Worker Grid */
+    .ai-worker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .ai-worker-card {
+      background: linear-gradient(135deg, rgba(0,245,255,0.1) 0%, rgba(255,0,128,0.1) 100%);
+      border: 1px solid rgba(0,245,255,0.3);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .ai-worker-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 32px rgba(0,245,255,0.2);
+    }
+
+    .worker-status {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--success);
+      animation: pulse 2s infinite;
+    }
+
+    .worker-status.working {
+      background: var(--accent);
+      animation: workingPulse 1s infinite;
+    }
+
+    .worker-status.idle {
+      background: var(--warning);
+      animation: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.1); }
+    }
+
+    @keyframes workingPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.2); }
+    }
+
+    .worker-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .worker-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .worker-role {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .worker-tasks {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    .worker-tasks li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .worker-tasks li::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.7rem;
+    }
+
+    .worker-progress {
+      background: rgba(255,255,255,0.1);
+      height: 6px;
+      border-radius: 3px;
+      margin-top: 1rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .worker-progress-bar {
+      height: 100%;
+      background: var(--gradient);
+      border-radius: 3px;
+      transition: width 0.5s ease;
+      position: relative;
+    }
+
+    .worker-progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    .worker-eta {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    /* Build Progress Dashboard */
+    .build-progress-dashboard {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 1200px;
+    }
+
+    .progress-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .progress-title {
+      font-size: 2rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .progress-steps {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    .progress-step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .progress-step::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 100%;
+      height: 2px;
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .progress-step:last-child::after {
+      display: none;
+    }
+
+    .progress-step.completed::after {
+      background: var(--success);
+    }
+
+    .progress-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      margin: 0 auto 0.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .progress-step.completed .progress-dot {
+      background: var(--success);
+      box-shadow: 0 0 15px var(--success);
+    }
+
+    .progress-step.active .progress-dot {
+      background: var(--accent);
+      animation: activePulse 2s infinite;
+      transform: scale(1.2);
+    }
+
+    @keyframes activePulse {
+      0%, 100% { box-shadow: 0 0 15px var(--accent); }
+      50% { box-shadow: 0 0 25px var(--accent); }
+    }
+
+    .step-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .progress-step.completed .step-label {
+      color: var(--success);
+    }
+
+    .progress-step.active .step-label {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Real-time Voice Input Interface */
+    .voice-input-container {
+      background: linear-gradient(135deg, rgba(0,245,255,0.1) 0%, rgba(255,0,128,0.1) 100%);
+      border: 2px solid rgba(0,245,255,0.3);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem auto;
+      max-width: 600px;
+    }
+
+    .voice-button {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--gradient);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+
+    .voice-button:hover {
+      transform: scale(1.05);
+    }
+
+    .voice-button.listening {
+      animation: voicePulse 1.5s infinite;
+    }
+
+    @keyframes voicePulse {
+      0% { box-shadow: 0 0 0 0 rgba(0,245,255,0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(0,245,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,245,255,0); }
+    }
+
+    .voice-status {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .voice-transcript {
+      background: rgba(255,255,255,0.1);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      min-height: 60px;
+      color: var(--text);
+      font-style: italic;
+      border: 1px dashed rgba(255,255,255,0.3);
+    }
+
+    /* Revenue Impact Display */
+    .revenue-impact {
+      background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid rgba(0,255,136,0.3);
+      position: relative;
+      overflow: hidden;
+      margin: 2rem auto;
+      max-width: 800px;
+    }
+
+    .revenue-impact::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,255,136,0.05) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .revenue-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .revenue-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .revenue-metric {
+      text-align: center;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .metric-value {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #00FF88 0%, #00F5FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .metric-change {
+      font-size: 0.8rem;
+      color: var(--success);
+      margin-top: 0.25rem;
+    }
+
+    /* Utility Classes */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-lg);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mb-xl {
+      margin-bottom: var(--space-xl);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .ai-worker-grid {
+        grid-template-columns: 1fr;
+        padding: var(--space-md);
+      }
+      
+      .progress-steps {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .progress-step::after {
+        display: none;
+      }
+      
+      .revenue-metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero-ai-workers">
+    <div class="container">
+      <h1 class="hero-title">Your AI Worker Team</h1>
+      <p style="font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.9;">
+        7 Specialized AI Workers Building Your Website in 3-8 Minutes
+      </p>
+    </div>
+  </section>
+
+  <!-- AI Workers Grid -->
+  <section style="padding: 4rem 0; background: var(--secondary);">
+    <div class="container">
+      <h2 class="text-center mb-xl" style="font-size: 2.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        Meet Your Dedicated AI Team
+      </h2>
+      
+      <div class="ai-worker-grid">
+        <!-- Designer Worker -->
+        <div class="ai-worker-card">
+          <div class="worker-status working"></div>
+          <div class="worker-icon">👷</div>
+          <div class="worker-name">Designer Worker</div>
+          <div class="worker-role">Visual Excellence</div>
+          <ul class="worker-tasks">
+            <li>Analyzing 10,000+ modern designs</li>
+            <li>Creating custom layouts</li>
+            <li>Selecting perfect color schemes</li>
+            <li>Implementing 2025 design trends</li>
+          </ul>
+          <div class="worker-progress">
+            <div class="worker-progress-bar" style="width: 85%;"></div>
+          </div>
+          <div class="worker-eta">ETA: 45 seconds</div>
+        </div>
+
+        <!-- Brand Worker -->
+        <div class="ai-worker-card">
+          <div class="worker-status working"></div>
+          <div class="worker-icon">🎨</div>
+          <div class="worker-name">Brand Worker</div>
+          <div class="worker-role">Identity Creation</div>
+          <ul class="worker-tasks">
+            <li>Generating professional logos</li>
+            <li>Creating visual identity</li>
+            <li>Developing brand color palette</li>
+            <li>Ensuring brand consistency</li>
+          </ul>
+          <div class="worker-progress">
+            <div class="worker-progress-bar" style="width: 65%;"></div>
+          </div>
+          <div class="worker-eta">ETA: 1 minute 20 seconds</div>
+        </div>
+
+        <!-- Content Worker -->
+        <div class="ai-worker-card">
+          <div class="worker-status working"></div>
+          <div class="worker-icon">✍️</div>
+          <div class="worker-name">Content Worker</div>
+          <div class="worker-role">Compelling Copy</div>
+          <ul class="worker-tasks">
+            <li>Writing engaging headlines</li>
+            <li>Creating persuasive descriptions</li>
+            <li>Developing value propositions</li>
+            <li>Optimizing for SEO</li>
+          </ul>
+          <div class="worker-progress">
+            <div class="worker-progress-bar" style="width: 45%;"></div>
+          </div>
+          <div class="worker-eta">ETA: 2 minutes</div>
+        </div>
+
+        <!-- Asset Worker -->
+        <div class="ai-worker-card">
+          <div class="worker-status working"></div>
+          <div class="worker-icon">🖼️</div>
+          <div class="worker-name">Asset Worker</div>
+          <div class="worker-role">Visual Content</div>
+          <ul class="worker-tasks">
+            <li>Generating custom images with AI</li>
+            <li>Creating infographics</li>
+            <li>Producing animations</li>
+            <li>Optimizing for web performance</li>
+          </ul>
+          <div class="worker-progress">
+            <div class="worker-progress-bar" style="width: 25%;"></div>
+          </div>
+          <div class="worker-eta">ETA: 2 minutes 45 seconds</div>
+        </div>
+
+        <!-- Performance Worker -->
+        <div class="ai-worker-card">
+          <div class="worker-status idle"></div>
+          <div class="worker-icon">⚡</div>
+          <div class="worker-name">Performance Worker</div>
+          <div class="worker-role">Speed & Optimization</div>
+          <ul class="worker-tasks">
+            <li>Ensuring sub-1-second load times</li>
+            <li>Implementing lazy loading</li>
+            <li>Optimizing Core Web Vitals</li>
+            <li>Testing across all devices</li>
+          </ul>
+          <div class="worker-progress">
+            <div class="worker-progress-bar" style="width: 0%;"></div>
+          </div>
+          <div class="worker-eta">Waiting for content...</div>
+        </div>
+
+        <!-- Technical Worker -->
+        <div class="ai-worker-card">
+          <div class="worker-status idle"></div>
+          <div class="worker-icon">🔧</div>
+          <div class="worker-name">Technical Worker</div>
+          <div class="worker-role">Backend & Integration</div>
+          <ul class="worker-tasks">
+            <li>Setting up databases</li>
+            <li>Integrating payment systems</li>
+            <li>Connecting booking systems</li>
+            <li>Configuring SEO tags</li>
+          </ul>
+          <div class="worker-progress">
+            <div class="worker-progress-bar" style="width: 0%;"></div>
+          </div>
+          <div class="worker-eta">Waiting for design...</div>
+        </div>
+
+        <!-- SEO Worker -->
+        <div class="ai-worker-card">
+          <div class="worker-status idle"></div>
+          <div class="worker-icon">🔍</div>
+          <div class="worker-name">SEO Worker</div>
+          <div class="worker-role">Search & AI Visibility</div>
+          <ul class="worker-tasks">
+            <li>Optimizing for Google & Bing</li>
+            <li>Implementing GEO strategies</li>
+            <li>Ensuring ChatGPT mentions</li>
+            <li>Building authority signals</li>
+          </ul>
+          <div class="worker-progress">
+            <div class="worker-progress-bar" style="width: 0%;"></div>
+          </div>
+          <div class="worker-eta">Waiting for content...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Build Progress Dashboard -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <div class="build-progress-dashboard">
+        <div class="progress-header">
+          <div class="progress-title">Building Your Website</div>
+          <div class="progress-subtitle">Professional website in 3-8 minutes</div>
+        </div>
+
+        <div class="progress-steps">
+          <div class="progress-step completed">
+            <div class="progress-dot"></div>
+            <div class="step-label">Input Analysis</div>
+          </div>
+          <div class="progress-step completed">
+            <div class="progress-dot"></div>
+            <div class="step-label">Design Creation</div>
+          </div>
+          <div class="progress-step active">
+            <div class="progress-dot"></div>
+            <div class="step-label">Content Generation</div>
+          </div>
+          <div class="progress-step">
+            <div class="progress-dot"></div>
+            <div class="step-label">Asset Creation</div>
+          </div>
+          <div class="progress-step">
+            <div class="progress-dot"></div>
+            <div class="step-label">Technical Setup</div>
+          </div>
+          <div class="progress-step">
+            <div class="progress-dot"></div>
+            <div class="step-label">Optimization</div>
+          </div>
+          <div class="progress-step">
+            <div class="progress-dot"></div>
+            <div class="step-label">Deployment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voice Input Interface -->
+  <section style="padding: 4rem 0; background: var(--secondary);">
+    <div class="container">
+      <h2 class="text-center mb-xl" style="font-size: 2.5rem;">Voice Input - Just Tell Us What You Need</h2>
+      
+      <div class="voice-input-container">
+        <button class="voice-button" id="voiceBtn">🎤</button>
+        <div class="voice-status" id="voiceStatus">Click to start voice input</div>
+        <div class="voice-transcript" id="voiceTranscript">
+          Your voice input will appear here...
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Revenue Impact Display -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <div class="revenue-impact">
+        <div class="revenue-title">Expected Business Impact</div>
+        <div class="revenue-metrics">
+          <div class="revenue-metric">
+            <span class="metric-value" id="conversionRate">+47%</span>
+            <div class="metric-label">Conversion Rate</div>
+            <div class="metric-change">↗ +12% vs industry avg</div>
+          </div>
+          <div class="revenue-metric">
+            <span class="metric-value" id="loadSpeed">0.8s</span>
+            <div class="metric-label">Load Speed</div>
+            <div class="metric-change">↗ 60% faster than average</div>
+          </div>
+          <div class="revenue-metric">
+            <span class="metric-value" id="seoRank">Top 3</span>
+            <div class="metric-label">SEO Ranking</div>
+            <div class="metric-change">↗ 85% more visibility</div>
+          </div>
+          <div class="revenue-metric">
+            <span class="metric-value" id="mobileScore">98/100</span>
+            <div class="metric-label">Mobile Score</div>
+            <div class="metric-change">↗ Perfect mobile experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Voice Input Simulation
+    const voiceBtn = document.getElementById('voiceBtn');
+    const voiceStatus = document.getElementById('voiceStatus');
+    const voiceTranscript = document.getElementById('voiceTranscript');
+
+    let isListening = false;
+    
+    voiceBtn.addEventListener('click', () => {
+      if (!isListening) {
+        startListening();
+      } else {
+        stopListening();
+      }
+    });
+
+    function startListening() {
+      isListening = true;
+      voiceBtn.classList.add('listening');
+      voiceStatus.textContent = 'Listening... Speak now';
+      voiceTranscript.textContent = '';
+      
+      // Simulate voice input
+      setTimeout(() => {
+        simulateVoiceInput();
+      }, 2000);
+    }
+
+    function stopListening() {
+      isListening = false;
+      voiceBtn.classList.remove('listening');
+      voiceStatus.textContent = 'Processing your request...';
+    }
+
+    function simulateVoiceInput() {
+      const sampleInputs = [
+        "I need a website for my dental practice in Austin. We specialize in cosmetic dentistry and Invisalign. I want a modern, calming design that appeals to families.",
+        "Build me a website for my SaaS startup. We're building project management software for remote teams. I want it to look professional and trustworthy.",
+        "Create a website for my e-commerce store selling organic skincare products. The design should be clean and natural, targeting health-conscious women.",
+        "I'm a freelance graphic designer and need a portfolio website. Make it creative and bold to showcase my work to potential clients."
+      ];
+      
+      const randomInput = sampleInputs[Math.floor(Math.random() * sampleInputs.length)];
+      
+      // Typewriter effect
+      let i = 0;
+      const typeWriter = () => {
+        if (i < randomInput.length) {
+          voiceTranscript.textContent += randomInput.charAt(i);
+          i++;
+          setTimeout(typeWriter, 50);
+        } else {
+          stopListening();
+          voiceStatus.textContent = 'Perfect! AI Workers are analyzing your request...';
+          
+          // Start the workers
+          setTimeout(() => {
+            activateWorkers();
+          }, 1000);
+        }
+      };
+      
+      typeWriter();
+    }
+
+    // Worker Animation System
+    function activateWorkers() {
+      const workers = document.querySelectorAll('.ai-worker-card');
+      
+      workers.forEach((worker, index) => {
+        setTimeout(() => {
+          const status = worker.querySelector('.worker-status');
+          status.className = 'worker-status working';
+          
+          const progressBar = worker.querySelector('.worker-progress-bar');
+          animateProgress(progressBar, Math.random() * 40 + 60); // 60-100%
+        }, index * 500);
+      });
+    }
+
+    function animateProgress(progressBar, targetWidth) {
+      let currentWidth = 0;
+      const increment = targetWidth / 100;
+      
+      const animation = setInterval(() => {
+        currentWidth += increment;
+        progressBar.style.width = currentWidth + '%';
+        
+        if (currentWidth >= targetWidth) {
+          clearInterval(animation);
+        }
+      }, 50);
+    }
+
+    // Auto-update worker progress
+    setInterval(() => {
+      const workingCards = document.querySelectorAll('.ai-worker-card');
+      workingCards.forEach(card => {
+        const status = card.querySelector('.worker-status');
+        if (status.classList.contains('working')) {
+          const progressBar = card.querySelector('.worker-progress-bar');
+          const currentWidth = parseFloat(progressBar.style.width) || 0;
+          
+          if (currentWidth < 95) {
+            progressBar.style.width = (currentWidth + Math.random() * 2) + '%';
+          } else if (currentWidth >= 95) {
+            status.className = 'worker-status';
+            status.style.background = 'var(--success)';
+            card.querySelector('.worker-eta').textContent = 'Completed!';
+          }
+        }
+      });
+    }, 3000);
+
+    // Animate metrics on scroll
+    const observerOptions = {
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateMetrics();
+        }
+      });
+    }, observerOptions);
+
+    const revenueSection = document.querySelector('.revenue-impact');
+    observer.observe(revenueSection);
+
+    function animateMetrics() {
+      // Animate conversion rate
+      animateCounter('conversionRate', 0, 47, '%', '+');
+      
+      // Animate load speed
+      setTimeout(() => {
+        animateDecimal('loadSpeed', 3.2, 0.8, 's');
+      }, 500);
+      
+      // Animate mobile score
+      setTimeout(() => {
+        animateCounter('mobileScore', 70, 98, '/100');
+      }, 1000);
+    }
+
+    function animateCounter(elementId, start, end, suffix = '', prefix = '') {
+      const element = document.getElementById(elementId);
+      const duration = 2000;
+      const startTime = performance.now();
+      
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const current = start + (end - start) * easeOutCubic(progress);
+        
+        element.textContent = prefix + Math.floor(current) + suffix;
+        
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+      
+      requestAnimationFrame(update);
+    }
+
+    function animateDecimal(elementId, start, end, suffix = '') {
+      const element = document.getElementById(elementId);
+      const duration = 2000;
+      const startTime = performance.now();
+      
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const current = start + (end - start) * easeOutCubic(progress);
+        
+        element.textContent = current.toFixed(1) + suffix;
+        
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+      
+      requestAnimationFrame(update);
+    }
+
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+  </script>
+</body>
+</html>

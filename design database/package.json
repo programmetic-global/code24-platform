@@ -1,0 +1,45 @@
+{
+  "name": "code24-design-database",
+  "version": "1.0.0",
+  "description": "Comprehensive 2025 web design trend database for Code24 AI workers",
+  "type": "module",
+  "main": "design-scraper.js",
+  "scripts": {
+    "start": "node design-scraper.js",
+    "scrape:trending": "node scripts/scrape-trending.js",
+    "scrape:awwwards": "node scripts/scrape-awwwards.js",
+    "scrape:behance": "node scripts/scrape-behance.js",
+    "analyze": "node scripts/analyze-database.js",
+    "generate:index": "node scripts/generate-index.js",
+    "generate:patterns": "node scripts/generate-patterns.js",
+    "export:ai": "node scripts/export-for-ai.js",
+    "test": "node scripts/test-scraper.js"
+  },
+  "keywords": [
+    "web-design",
+    "design-trends",
+    "2025",
+    "scraping",
+    "database",
+    "ai",
+    "machine-learning"
+  ],
+  "author": "Code24 Team",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^21.5.0",
+    "cheerio": "^1.0.0-rc.12",
+    "playwright": "^1.40.0",
+    "sharp": "^0.33.0",
+    "color-thief-node": "^1.0.4",
+    "css-tree": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

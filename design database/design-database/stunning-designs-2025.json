@@ -1,0 +1,446 @@
+{
+  "colorPalettes": {
+    "neonDark": {
+      "primary": "#0F0F0F",
+      "secondary": "#1A1A1A",
+      "accent": "#00F5FF",
+      "accent2": "#FF0080",
+      "text": "#FFFFFF",
+      "textMuted": "#A0A0A0",
+      "success": "#00FF88",
+      "warning": "#FFB800",
+      "gradient": "linear-gradient(135deg, #00F5FF 0%, #FF0080 100%)"
+    },
+    "saasBlue": {
+      "primary": "#0066FF",
+      "secondary": "#F8FAFC",
+      "accent": "#4F46E5",
+      "accent2": "#06D6A0",
+      "text": "#1E293B",
+      "textMuted": "#64748B",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "gradient": "linear-gradient(135deg, #0066FF 0%, #4F46E5 100%)"
+    },
+    "earthWarm": {
+      "primary": "#8B4513",
+      "secondary": "#F5F5DC",
+      "accent": "#FF6B35",
+      "accent2": "#F7931E",
+      "text": "#2D1B0A",
+      "textMuted": "#8B6914",
+      "success": "#228B22",
+      "warning": "#DAA520",
+      "gradient": "linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)"
+    },
+    "vividGlow": {
+      "primary": "#000000",
+      "secondary": "#0A0A0A",
+      "accent": "#39FF14",
+      "accent2": "#FF1493",
+      "text": "#FFFFFF",
+      "textMuted": "#CCCCCC",
+      "success": "#00FF00",
+      "warning": "#FFFF00",
+      "gradient": "linear-gradient(135deg, #39FF14 0%, #FF1493 100%)",
+      "glow": "box-shadow: 0 0 20px currentColor"
+    },
+    "premiumPro": {
+      "primary": "#000000",
+      "secondary": "#FFFFFF",
+      "accent": "#6366F1",
+      "accent2": "#8B5CF6",
+      "text": "#111827",
+      "textMuted": "#6B7280",
+      "success": "#059669",
+      "warning": "#D97706",
+      "gradient": "linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)",
+      "surface": "#F9FAFB",
+      "border": "#E5E7EB"
+    },
+    "minimalistMono": {
+      "primary": "#FAFAFA",
+      "secondary": "#F4F4F5",
+      "accent": "#18181B",
+      "accent2": "#27272A",
+      "text": "#09090B",
+      "textMuted": "#71717A",
+      "success": "#16A34A",
+      "warning": "#EA580C",
+      "gradient": "linear-gradient(135deg, #18181B 0%, #27272A 100%)",
+      "surface": "#FFFFFF",
+      "border": "#E4E4E7"
+    },
+    "techGradient": {
+      "primary": "#0F172A",
+      "secondary": "#1E293B",
+      "accent": "#3B82F6",
+      "accent2": "#06B6D4",
+      "text": "#F8FAFC",
+      "textMuted": "#CBD5E1",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "gradient": "linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%)",
+      "surface": "#334155",
+      "border": "#475569"
+    },
+    "luxuryDark": {
+      "primary": "#0C0C0C",
+      "secondary": "#171717",
+      "accent": "#D4AF37",
+      "accent2": "#FFD700",
+      "text": "#FAFAFA",
+      "textMuted": "#A1A1AA",
+      "success": "#22C55E",
+      "warning": "#EAB308",
+      "gradient": "linear-gradient(135deg, #D4AF37 0%, #FFD700 100%)",
+      "surface": "#262626",
+      "border": "#404040"
+    }
+  },
+  "typography": {
+    "modernBold": {
+      "heading": {
+        "family": "Inter, system-ui, sans-serif",
+        "weights": [
+          700,
+          800,
+          900
+        ],
+        "sizes": {
+          "h1": "clamp(2.5rem, 5vw, 4rem)",
+          "h2": "clamp(2rem, 4vw, 3rem)",
+          "h3": "clamp(1.5rem, 3vw, 2rem)"
+        }
+      },
+      "body": {
+        "family": "Inter, system-ui, sans-serif",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "size": "clamp(1rem, 2.5vw, 1.125rem)",
+        "lineHeight": 1.6
+      }
+    },
+    "elegantSerif": {
+      "heading": {
+        "family": "Playfair Display, Georgia, serif",
+        "weights": [
+          600,
+          700,
+          800
+        ],
+        "sizes": {
+          "h1": "clamp(2.5rem, 5vw, 4rem)",
+          "h2": "clamp(2rem, 4vw, 3rem)",
+          "h3": "clamp(1.5rem, 3vw, 2rem)"
+        }
+      },
+      "body": {
+        "family": "Source Sans Pro, system-ui, sans-serif",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "size": "clamp(1rem, 2.5vw, 1.125rem)",
+        "lineHeight": 1.7
+      }
+    },
+    "professionalSans": {
+      "heading": {
+        "family": "system-ui, -apple-system, sans-serif",
+        "weights": [
+          600,
+          700,
+          800
+        ],
+        "sizes": {
+          "h1": "clamp(3rem, 6vw, 5rem)",
+          "h2": "clamp(2.25rem, 4.5vw, 3.5rem)",
+          "h3": "clamp(1.75rem, 3.5vw, 2.5rem)",
+          "h4": "clamp(1.5rem, 3vw, 2rem)",
+          "h5": "clamp(1.25rem, 2.5vw, 1.5rem)",
+          "h6": "clamp(1.125rem, 2.25vw, 1.25rem)"
+        },
+        "lineHeight": 1.1,
+        "letterSpacing": "-0.02em"
+      },
+      "body": {
+        "family": "system-ui, -apple-system, sans-serif",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "size": "clamp(1rem, 2vw, 1.125rem)",
+        "lineHeight": 1.7,
+        "letterSpacing": "0"
+      },
+      "mono": {
+        "family": "JetBrains Mono, Menlo, Monaco, monospace",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "size": "0.9em"
+      }
+    },
+    "geometricModern": {
+      "heading": {
+        "family": "Outfit, system-ui, sans-serif",
+        "weights": [
+          500,
+          600,
+          700,
+          800
+        ],
+        "sizes": {
+          "h1": "clamp(2.75rem, 5.5vw, 4.5rem)",
+          "h2": "clamp(2.25rem, 4.5vw, 3.5rem)",
+          "h3": "clamp(1.875rem, 3.75vw, 2.75rem)",
+          "h4": "clamp(1.5rem, 3vw, 2.25rem)",
+          "h5": "clamp(1.25rem, 2.5vw, 1.75rem)",
+          "h6": "clamp(1.125rem, 2.25vw, 1.5rem)"
+        },
+        "lineHeight": 1.15,
+        "letterSpacing": "-0.01em"
+      },
+      "body": {
+        "family": "Inter, system-ui, sans-serif",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "size": "clamp(1rem, 2vw, 1.125rem)",
+        "lineHeight": 1.65
+      }
+    },
+    "luxurySerif": {
+      "heading": {
+        "family": "Crimson Pro, Georgia, serif",
+        "weights": [
+          400,
+          500,
+          600,
+          700
+        ],
+        "sizes": {
+          "h1": "clamp(3.5rem, 7vw, 6rem)",
+          "h2": "clamp(2.75rem, 5.5vw, 4.5rem)",
+          "h3": "clamp(2.25rem, 4.5vw, 3.5rem)",
+          "h4": "clamp(1.875rem, 3.75vw, 2.75rem)",
+          "h5": "clamp(1.5rem, 3vw, 2.25rem)",
+          "h6": "clamp(1.25rem, 2.5vw, 1.75rem)"
+        },
+        "lineHeight": 1.2,
+        "letterSpacing": "-0.01em"
+      },
+      "body": {
+        "family": "Source Sans 3, system-ui, sans-serif",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "size": "clamp(1.125rem, 2.25vw, 1.25rem)",
+        "lineHeight": 1.8
+      }
+    }
+  },
+  "spacing": {
+    "scale": {
+      "xs": "0.25rem",
+      "sm": "0.5rem",
+      "md": "1rem",
+      "lg": "1.5rem",
+      "xl": "2rem",
+      "2xl": "3rem",
+      "3xl": "4rem",
+      "4xl": "6rem",
+      "5xl": "8rem",
+      "6xl": "12rem",
+      "7xl": "16rem",
+      "8xl": "20rem"
+    },
+    "responsive": {
+      "mobile": {
+        "container": "1rem",
+        "section": "2rem",
+        "component": "1rem"
+      },
+      "tablet": {
+        "container": "2rem",
+        "section": "3rem",
+        "component": "1.5rem"
+      },
+      "desktop": {
+        "container": "3rem",
+        "section": "4rem",
+        "component": "2rem"
+      }
+    }
+  },
+  "layouts": {
+    "bentoBox": {
+      "name": "Bento Box Grid",
+      "description": "Asymmetric modular grid system inspired by Japanese bento boxes",
+      "css": "\n        .bento-grid {\n          display: grid;\n          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n          grid-auto-rows: 200px;\n          gap: 1.5rem;\n          padding: 2rem;\n        }\n        .bento-item {\n          background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);\n          border-radius: 1rem;\n          padding: 2rem;\n          display: flex;\n          flex-direction: column;\n          justify-content: center;\n          align-items: center;\n          text-align: center;\n          transition: transform 0.3s ease;\n        }\n        .bento-item:hover {\n          transform: translateY(-4px);\n        }\n        .bento-large {\n          grid-column: span 2;\n          grid-row: span 2;\n        }\n      "
+    },
+    "fullScreenHero": {
+      "name": "Full-Screen Impact Hero",
+      "description": "Immersive full-viewport hero with bold typography",
+      "css": "\n        .hero-fullscreen {\n          height: 100vh;\n          display: flex;\n          flex-direction: column;\n          justify-content: center;\n          align-items: center;\n          text-align: center;\n          background: var(--gradient);\n          position: relative;\n          overflow: hidden;\n        }\n        .hero-title {\n          font-size: clamp(3rem, 8vw, 6rem);\n          font-weight: 900;\n          line-height: 0.9;\n          margin-bottom: 2rem;\n          background: linear-gradient(45deg, #fff, rgba(255,255,255,0.7));\n          -webkit-background-clip: text;\n          -webkit-text-fill-color: transparent;\n          animation: glow 2s ease-in-out infinite alternate;\n        }\n        @keyframes glow {\n          from { filter: drop-shadow(0 0 20px rgba(255,255,255,0.5)); }\n          to { filter: drop-shadow(0 0 30px rgba(255,255,255,0.8)); }\n        }\n      "
+    },
+    "professionalGrid": {
+      "name": "Professional Grid System",
+      "description": "Clean, responsive grid with proper spacing",
+      "css": "\n        .grid-container {\n          display: grid;\n          grid-template-columns: repeat(12, 1fr);\n          gap: var(--space-lg);\n          max-width: 1400px;\n          margin: 0 auto;\n          padding: 0 var(--space-lg);\n        }\n        .grid-col-1 { grid-column: span 1; }\n        .grid-col-2 { grid-column: span 2; }\n        .grid-col-3 { grid-column: span 3; }\n        .grid-col-4 { grid-column: span 4; }\n        .grid-col-5 { grid-column: span 5; }\n        .grid-col-6 { grid-column: span 6; }\n        .grid-col-7 { grid-column: span 7; }\n        .grid-col-8 { grid-column: span 8; }\n        .grid-col-9 { grid-column: span 9; }\n        .grid-col-10 { grid-column: span 10; }\n        .grid-col-11 { grid-column: span 11; }\n        .grid-col-12 { grid-column: span 12; }\n        @media (max-width: 768px) {\n          .grid-container {\n            grid-template-columns: 1fr;\n            gap: var(--space-md);\n            padding: 0 var(--space-md);\n          }\n          [class*=\"grid-col-\"] {\n            grid-column: span 1;\n          }\n        }\n      "
+    },
+    "modernCardLayout": {
+      "name": "Modern Card Layout",
+      "description": "Flexible card system with hover effects",
+      "css": "\n        .card-grid {\n          display: grid;\n          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));\n          gap: var(--space-xl);\n          padding: var(--space-xl) 0;\n        }\n        .card {\n          background: var(--surface, #ffffff);\n          border: 1px solid var(--border, #e5e7eb);\n          border-radius: 12px;\n          padding: var(--space-xl);\n          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n        }\n        .card:hover {\n          transform: translateY(-4px);\n          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);\n          border-color: var(--accent, #6366f1);\n        }\n        .card-header {\n          margin-bottom: var(--space-lg);\n        }\n        .card-title {\n          font-size: 1.25rem;\n          font-weight: 600;\n          margin-bottom: var(--space-sm);\n          color: var(--text, #111827);\n        }\n        .card-description {\n          color: var(--text-muted, #6b7280);\n          line-height: 1.6;\n        }\n      "
+    },
+    "splitScreenLayout": {
+      "name": "Split Screen Layout",
+      "description": "Modern split-screen design for landing pages",
+      "css": "\n        .split-screen {\n          display: grid;\n          grid-template-columns: 1fr 1fr;\n          min-height: 100vh;\n        }\n        .split-left,\n        .split-right {\n          display: flex;\n          flex-direction: column;\n          justify-content: center;\n          padding: var(--space-3xl);\n        }\n        .split-left {\n          background: var(--primary, #000000);\n          color: var(--text, #ffffff);\n        }\n        .split-right {\n          background: var(--secondary, #ffffff);\n          color: var(--text, #000000);\n        }\n        @media (max-width: 768px) {\n          .split-screen {\n            grid-template-columns: 1fr;\n          }\n          .split-left,\n          .split-right {\n            padding: var(--space-xl);\n            min-height: 50vh;\n          }\n        }\n      "
+    }
+  },
+  "interactions": {
+    "smoothHovers": {
+      "css": "\n        .smooth-hover {\n          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n        }\n        .smooth-hover:hover {\n          transform: translateY(-2px);\n          box-shadow: 0 10px 25px rgba(0,0,0,0.15);\n        }\n      "
+    },
+    "magneticButtons": {
+      "css": "\n        .magnetic-btn {\n          position: relative;\n          transition: transform 0.1s ease;\n          cursor: pointer;\n        }\n        .magnetic-btn:hover {\n          transform: scale(1.05);\n        }\n        .magnetic-btn::before {\n          content: '';\n          position: absolute;\n          inset: -2px;\n          background: var(--gradient);\n          border-radius: inherit;\n          opacity: 0;\n          transition: opacity 0.3s ease;\n          z-index: -1;\n        }\n        .magnetic-btn:hover::before {\n          opacity: 1;\n        }\n      "
+    }
+  },
+  "animations": {
+    "parallaxEffects": {
+      "css": "\n        .parallax-container {\n          position: relative;\n          overflow: hidden;\n        }\n        .parallax-element {\n          transform: translateZ(0);\n          transition: transform 0.1s ease-out;\n        }\n        .parallax-bg {\n          position: absolute;\n          top: -20%;\n          left: 0;\n          width: 100%;\n          height: 120%;\n          background-attachment: fixed;\n          will-change: transform;\n        }\n      "
+    },
+    "morphingShapes": {
+      "css": "\n        .morphing-blob {\n          background: var(--gradient);\n          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;\n          animation: morph 8s ease-in-out infinite;\n          transition: all 1s ease-in-out;\n        }\n        @keyframes morph {\n          0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }\n          25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }\n          50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }\n          75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }\n          100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }\n        }\n      "
+    },
+    "textReveal": {
+      "css": "\n        .text-reveal {\n          overflow: hidden;\n          position: relative;\n        }\n        .text-reveal-line {\n          transform: translateY(100%);\n          animation: revealText 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;\n        }\n        @keyframes revealText {\n          to { transform: translateY(0); }\n        }\n        .text-typewriter {\n          overflow: hidden;\n          border-right: 0.15em solid var(--accent);\n          white-space: nowrap;\n          animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;\n        }\n        @keyframes typing {\n          from { width: 0; }\n          to { width: 100%; }\n        }\n        @keyframes blink-caret {\n          from, to { border-color: transparent; }\n          50% { border-color: var(--accent); }\n        }\n      "
+    }
+  },
+  "dataViz": {
+    "progressBars": {
+      "css": "\n        .progress-container {\n          background: rgba(255, 255, 255, 0.1);\n          border-radius: 10px;\n          overflow: hidden;\n          height: 20px;\n          position: relative;\n        }\n        .progress-bar {\n          height: 100%;\n          background: var(--gradient);\n          border-radius: 10px;\n          transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);\n          position: relative;\n          overflow: hidden;\n        }\n        .progress-bar::before {\n          content: '';\n          position: absolute;\n          top: 0;\n          left: -100%;\n          width: 100%;\n          height: 100%;\n          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);\n          animation: shimmer 2s infinite;\n        }\n        @keyframes shimmer {\n          0% { left: -100%; }\n          100% { left: 100%; }\n        }\n      "
+    },
+    "statCounters": {
+      "css": "\n        .stat-counter {\n          font-size: 3rem;\n          font-weight: 900;\n          background: var(--gradient);\n          -webkit-background-clip: text;\n          -webkit-text-fill-color: transparent;\n          text-align: center;\n          counter-reset: num;\n        }\n        .stat-counter.animate {\n          animation: countUp 2s ease-in-out;\n        }\n        @keyframes countUp {\n          from { transform: scale(0.5); opacity: 0; }\n          to { transform: scale(1); opacity: 1; }\n        }\n      "
+    }
+  },
+  "visualBuilder": {
+    "livePreview": {
+      "css": "\n        .live-preview-container {\n          position: relative;\n          background: #ffffff;\n          border-radius: 12px;\n          overflow: hidden;\n          box-shadow: 0 20px 40px rgba(0,0,0,0.3);\n          transition: all 0.5s ease;\n        }\n        .live-preview-indicator {\n          position: absolute;\n          top: 10px;\n          right: 10px;\n          background: rgba(0,245,255,0.2);\n          backdrop-filter: blur(10px);\n          border: 1px solid rgba(0,245,255,0.5);\n          border-radius: 20px;\n          padding: 0.25rem 0.75rem;\n          font-size: 0.7rem;\n          color: #00f5ff;\n          display: flex;\n          align-items: center;\n          gap: 0.5rem;\n          z-index: 10;\n        }\n        .live-dot {\n          width: 8px;\n          height: 8px;\n          background: #00ff88;\n          border-radius: 50%;\n          animation: livePulse 2s infinite;\n        }\n        @keyframes livePulse {\n          0%, 100% { opacity: 1; transform: scale(1); }\n          50% { opacity: 0.5; transform: scale(1.2); }\n        }\n        .preview-viewport {\n          transition: all 0.5s ease;\n          transform-origin: top left;\n        }\n        .preview-viewport.mobile {\n          max-width: 375px;\n          transform: scale(0.8);\n        }\n        .preview-viewport.tablet {\n          max-width: 768px;\n          transform: scale(0.9);\n        }\n      "
+    },
+    "componentPalette": {
+      "css": "\n        .component-palette {\n          background: rgba(0,0,0,0.8);\n          backdrop-filter: blur(20px);\n          border: 1px solid rgba(0,245,255,0.3);\n          border-radius: 12px;\n          padding: 1.5rem;\n          max-height: 80vh;\n          overflow-y: auto;\n        }\n        .component-section {\n          margin-bottom: 2rem;\n        }\n        .component-section h3 {\n          font-size: 0.9rem;\n          text-transform: uppercase;\n          letter-spacing: 1px;\n          color: #00f5ff;\n          margin-bottom: 1rem;\n          opacity: 0.8;\n        }\n        .component-grid {\n          display: grid;\n          grid-template-columns: repeat(2, 1fr);\n          gap: 0.75rem;\n        }\n        .component-item {\n          background: rgba(255,255,255,0.05);\n          border: 1px solid rgba(0,245,255,0.2);\n          border-radius: 8px;\n          padding: 1rem;\n          cursor: grab;\n          transition: all 0.3s ease;\n          text-align: center;\n          user-select: none;\n        }\n        .component-item:hover {\n          background: rgba(0,245,255,0.1);\n          border-color: rgba(0,245,255,0.5);\n          transform: translateY(-2px);\n        }\n        .component-item:active {\n          cursor: grabbing;\n          transform: scale(0.95);\n        }\n        .component-icon {\n          width: 24px;\n          height: 24px;\n          margin: 0 auto 0.5rem;\n          background: linear-gradient(45deg, #00f5ff, #ff0080);\n          border-radius: 4px;\n        }\n        .component-name {\n          font-size: 0.8rem;\n          opacity: 0.9;\n        }\n      "
+    },
+    "propertiesPanel": {
+      "css": "\n        .properties-panel {\n          background: rgba(0,0,0,0.8);\n          backdrop-filter: blur(20px);\n          border: 1px solid rgba(0,245,255,0.3);\n          border-radius: 12px;\n          padding: 1.5rem;\n          max-height: 80vh;\n          overflow-y: auto;\n        }\n        .panel-section {\n          margin-bottom: 2rem;\n          border-bottom: 1px solid rgba(255,255,255,0.1);\n          padding-bottom: 1.5rem;\n        }\n        .panel-section:last-child {\n          border-bottom: none;\n          margin-bottom: 0;\n        }\n        .panel-section h3 {\n          font-size: 0.9rem;\n          text-transform: uppercase;\n          letter-spacing: 1px;\n          color: #00f5ff;\n          margin-bottom: 1rem;\n          opacity: 0.8;\n        }\n        .form-group {\n          margin-bottom: 1rem;\n        }\n        .form-group label {\n          display: block;\n          font-size: 0.8rem;\n          margin-bottom: 0.5rem;\n          opacity: 0.8;\n        }\n        .form-group input,\n        .form-group select,\n        .form-group textarea {\n          width: 100%;\n          background: rgba(255,255,255,0.1);\n          border: 1px solid rgba(0,245,255,0.3);\n          color: white;\n          padding: 0.75rem;\n          border-radius: 6px;\n          font-size: 0.8rem;\n          transition: all 0.3s ease;\n        }\n        .form-group input:focus,\n        .form-group select:focus,\n        .form-group textarea:focus {\n          outline: none;\n          border-color: #00f5ff;\n          box-shadow: 0 0 0 2px rgba(0,245,255,0.2);\n        }\n        .color-picker {\n          display: flex;\n          gap: 0.5rem;\n          flex-wrap: wrap;\n        }\n        .color-option {\n          width: 30px;\n          height: 30px;\n          border-radius: 6px;\n          cursor: pointer;\n          border: 2px solid transparent;\n          transition: all 0.3s ease;\n        }\n        .color-option.selected {\n          border-color: #00f5ff;\n          transform: scale(1.1);\n        }\n      "
+    },
+    "buildTimeline": {
+      "css": "\n        .build-timeline {\n          background: rgba(0,0,0,0.9);\n          backdrop-filter: blur(20px);\n          border: 1px solid rgba(0,245,255,0.3);\n          border-radius: 12px;\n          padding: 1rem;\n          min-width: 300px;\n          position: relative;\n        }\n        .timeline-header {\n          display: flex;\n          align-items: center;\n          justify-content: space-between;\n          margin-bottom: 1rem;\n        }\n        .timeline-title {\n          font-size: 0.9rem;\n          font-weight: 600;\n          color: #00f5ff;\n        }\n        .timeline-progress {\n          font-size: 0.8rem;\n          opacity: 0.8;\n        }\n        .timeline-steps {\n          list-style: none;\n        }\n        .timeline-step {\n          display: flex;\n          align-items: center;\n          gap: 0.75rem;\n          padding: 0.5rem 0;\n          font-size: 0.8rem;\n        }\n        .step-indicator {\n          width: 20px;\n          height: 20px;\n          border-radius: 50%;\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          font-size: 0.7rem;\n          font-weight: 600;\n        }\n        .step-indicator.completed {\n          background: #00ff88;\n          color: #000;\n        }\n        .step-indicator.current {\n          background: #00f5ff;\n          color: #000;\n          animation: currentStep 2s ease-in-out infinite;\n        }\n        .step-indicator.pending {\n          background: rgba(255,255,255,0.2);\n          color: rgba(255,255,255,0.6);\n        }\n        @keyframes currentStep {\n          0%, 100% { transform: scale(1); }\n          50% { transform: scale(1.1); }\n        }\n        .step-text {\n          flex: 1;\n        }\n        .step-text.completed {\n          opacity: 0.6;\n        }\n        .step-text.current {\n          color: #00f5ff;\n        }\n      "
+    }
+  },
+  "code24Platform": {
+    "aiWorkerCards": {
+      "css": "\n        .ai-worker-grid {\n          display: grid;\n          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));\n          gap: 1.5rem;\n          padding: 2rem;\n        }\n        .ai-worker-card {\n          background: linear-gradient(135deg, rgba(0,245,255,0.1) 0%, rgba(255,0,128,0.1) 100%);\n          border: 1px solid rgba(0,245,255,0.3);\n          border-radius: 1rem;\n          padding: 1.5rem;\n          position: relative;\n          overflow: hidden;\n          transition: all 0.3s ease;\n        }\n        .ai-worker-card:hover {\n          transform: translateY(-4px);\n          border-color: var(--accent);\n          box-shadow: 0 8px 32px rgba(0,245,255,0.2);\n        }\n        .worker-status {\n          position: absolute;\n          top: 1rem;\n          right: 1rem;\n          width: 12px;\n          height: 12px;\n          border-radius: 50%;\n          background: var(--success);\n          animation: pulse 2s infinite;\n        }\n        .worker-status.working {\n          background: var(--accent);\n          animation: workingPulse 1s infinite;\n        }\n        @keyframes workingPulse {\n          0%, 100% { opacity: 1; transform: scale(1); }\n          50% { opacity: 0.7; transform: scale(1.2); }\n        }\n        .worker-icon {\n          font-size: 2rem;\n          margin-bottom: 1rem;\n          display: block;\n        }\n        .worker-progress {\n          background: rgba(255,255,255,0.1);\n          height: 4px;\n          border-radius: 2px;\n          margin-top: 1rem;\n          overflow: hidden;\n        }\n        .worker-progress-bar {\n          height: 100%;\n          background: var(--gradient);\n          border-radius: 2px;\n          transition: width 0.5s ease;\n          position: relative;\n        }\n        .worker-progress-bar::after {\n          content: '';\n          position: absolute;\n          top: 0;\n          left: -100%;\n          width: 100%;\n          height: 100%;\n          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);\n          animation: shimmer 2s infinite;\n        }\n      "
+    },
+    "revenueDashboard": {
+      "css": "\n        .revenue-machine-dashboard {\n          background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);\n          border-radius: 1rem;\n          padding: 2rem;\n          border: 1px solid rgba(0,255,136,0.3);\n          position: relative;\n          overflow: hidden;\n        }\n        .revenue-machine-dashboard::before {\n          content: '';\n          position: absolute;\n          top: -50%;\n          left: -50%;\n          width: 200%;\n          height: 200%;\n          background: radial-gradient(circle, rgba(0,255,136,0.05) 0%, transparent 70%);\n          animation: rotate 20s linear infinite;\n        }\n        .revenue-metric {\n          display: flex;\n          justify-content: space-between;\n          align-items: center;\n          padding: 1rem 0;\n          border-bottom: 1px solid rgba(255,255,255,0.1);\n        }\n        .revenue-metric:last-child {\n          border-bottom: none;\n        }\n        .metric-value {\n          font-size: 2rem;\n          font-weight: 900;\n          background: linear-gradient(135deg, #00FF88 0%, #00F5FF 100%);\n          -webkit-background-clip: text;\n          -webkit-text-fill-color: transparent;\n          animation: countUp 2s ease-out;\n        }\n        .metric-change {\n          display: flex;\n          align-items: center;\n          font-size: 0.9rem;\n          color: var(--success);\n        }\n        .metric-change.negative {\n          color: var(--warning);\n        }\n        .metric-change::before {\n          content: '↗';\n          margin-right: 0.5rem;\n          font-size: 1.2rem;\n        }\n        .metric-change.negative::before {\n          content: '↘';\n        }\n        @keyframes rotate {\n          from { transform: rotate(0deg); }\n          to { transform: rotate(360deg); }\n        }\n      "
+    },
+    "optimizationStatus": {
+      "css": "\n        .optimization-panel {\n          background: rgba(255,255,255,0.05);\n          backdrop-filter: blur(10px);\n          border: 1px solid rgba(255,255,255,0.1);\n          border-radius: 1rem;\n          padding: 1.5rem;\n          margin-bottom: 1rem;\n          position: relative;\n        }\n        .optimization-header {\n          display: flex;\n          justify-content: space-between;\n          align-items: center;\n          margin-bottom: 1rem;\n        }\n        .optimization-type {\n          font-weight: 600;\n          color: var(--text);\n        }\n        .optimization-impact {\n          font-size: 0.9rem;\n          padding: 0.25rem 0.75rem;\n          border-radius: 1rem;\n          background: rgba(0,255,136,0.2);\n          color: var(--success);\n          border: 1px solid var(--success);\n        }\n        .optimization-timeline {\n          display: flex;\n          align-items: center;\n          margin-top: 1rem;\n        }\n        .timeline-step {\n          flex: 1;\n          text-align: center;\n          position: relative;\n        }\n        .timeline-step::after {\n          content: '';\n          position: absolute;\n          top: 50%;\n          left: 100%;\n          width: 100%;\n          height: 2px;\n          background: rgba(255,255,255,0.2);\n          transform: translateY(-50%);\n        }\n        .timeline-step:last-child::after {\n          display: none;\n        }\n        .timeline-step.completed::after {\n          background: var(--success);\n        }\n        .timeline-dot {\n          width: 12px;\n          height: 12px;\n          border-radius: 50%;\n          background: rgba(255,255,255,0.3);\n          margin: 0 auto 0.5rem;\n          position: relative;\n          z-index: 1;\n        }\n        .timeline-step.completed .timeline-dot {\n          background: var(--success);\n          box-shadow: 0 0 10px var(--success);\n        }\n        .timeline-step.active .timeline-dot {\n          background: var(--accent);\n          animation: pulse 2s infinite;\n        }\n      "
+    }
+  },
+  "industryTemplates": {
+    "healthcare": {
+      "colorPalette": {
+        "primary": "#2563EB",
+        "secondary": "#F8FAFC",
+        "accent": "#059669",
+        "accent2": "#DC2626",
+        "text": "#1E293B",
+        "textMuted": "#64748B",
+        "trust": "#0369A1",
+        "gradient": "linear-gradient(135deg, #2563EB 0%, #059669 100%)"
+      },
+      "components": {
+        "appointmentCard": "\n          .appointment-card {\n            background: white;\n            border-left: 4px solid var(--accent);\n            border-radius: 0.5rem;\n            padding: 1.5rem;\n            box-shadow: 0 1px 3px rgba(0,0,0,0.1);\n            margin-bottom: 1rem;\n            transition: all 0.3s ease;\n          }\n          .appointment-card:hover {\n            box-shadow: 0 4px 12px rgba(37,99,235,0.15);\n            transform: translateY(-2px);\n          }\n          .appointment-time {\n            font-size: 1.25rem;\n            font-weight: 600;\n            color: var(--primary);\n            margin-bottom: 0.5rem;\n          }\n          .appointment-service {\n            color: var(--text-muted);\n            margin-bottom: 1rem;\n          }\n          .doctor-info {\n            display: flex;\n            align-items: center;\n            gap: 0.75rem;\n          }\n          .doctor-avatar {\n            width: 40px;\n            height: 40px;\n            border-radius: 50%;\n            background: var(--gradient);\n          }\n        "
+      }
+    },
+    "ecommerce": {
+      "colorPalette": {
+        "primary": "#1F2937",
+        "secondary": "#F9FAFB",
+        "accent": "#F59E0B",
+        "accent2": "#EF4444",
+        "text": "#111827",
+        "textMuted": "#6B7280",
+        "success": "#10B981",
+        "gradient": "linear-gradient(135deg, #F59E0B 0%, #EF4444 100%)"
+      },
+      "components": {
+        "productCard": "\n          .product-card {\n            background: white;\n            border-radius: 1rem;\n            overflow: hidden;\n            box-shadow: 0 1px 3px rgba(0,0,0,0.1);\n            transition: all 0.3s ease;\n            position: relative;\n          }\n          .product-card:hover {\n            transform: translateY(-4px);\n            box-shadow: 0 8px 25px rgba(0,0,0,0.15);\n          }\n          .product-image {\n            width: 100%;\n            height: 200px;\n            object-fit: cover;\n            transition: transform 0.3s ease;\n          }\n          .product-card:hover .product-image {\n            transform: scale(1.05);\n          }\n          .product-badge {\n            position: absolute;\n            top: 1rem;\n            left: 1rem;\n            background: var(--accent2);\n            color: white;\n            padding: 0.25rem 0.75rem;\n            border-radius: 1rem;\n            font-size: 0.8rem;\n            font-weight: 600;\n          }\n          .product-info {\n            padding: 1rem;\n          }\n          .product-price {\n            font-size: 1.25rem;\n            font-weight: 700;\n            color: var(--accent);\n            margin-bottom: 0.5rem;\n          }\n          .add-to-cart {\n            width: 100%;\n            background: var(--gradient);\n            border: none;\n            color: white;\n            padding: 0.75rem;\n            border-radius: 0.5rem;\n            font-weight: 600;\n            cursor: pointer;\n            transition: all 0.3s ease;\n          }\n          .add-to-cart:hover {\n            transform: translateY(-1px);\n            box-shadow: 0 4px 12px rgba(245,158,11,0.3);\n          }\n        "
+      }
+    },
+    "saas": {
+      "colorPalette": {
+        "primary": "#4F46E5",
+        "secondary": "#F8FAFC",
+        "accent": "#06D6A0",
+        "accent2": "#FFB800",
+        "text": "#1E293B",
+        "textMuted": "#64748B",
+        "success": "#10B981",
+        "gradient": "linear-gradient(135deg, #4F46E5 0%, #06D6A0 100%)"
+      },
+      "components": {
+        "pricingCard": "\n          .pricing-card {\n            background: white;\n            border: 2px solid #E5E7EB;\n            border-radius: 1rem;\n            padding: 2rem;\n            text-align: center;\n            position: relative;\n            transition: all 0.3s ease;\n          }\n          .pricing-card.featured {\n            border-color: var(--primary);\n            transform: scale(1.05);\n            box-shadow: 0 8px 32px rgba(79,70,229,0.2);\n          }\n          .pricing-card:hover {\n            border-color: var(--accent);\n            transform: translateY(-4px);\n          }\n          .pricing-badge {\n            position: absolute;\n            top: -12px;\n            left: 50%;\n            transform: translateX(-50%);\n            background: var(--gradient);\n            color: white;\n            padding: 0.5rem 1rem;\n            border-radius: 1rem;\n            font-size: 0.8rem;\n            font-weight: 600;\n          }\n          .pricing-amount {\n            font-size: 3rem;\n            font-weight: 900;\n            color: var(--primary);\n            margin: 1rem 0;\n          }\n          .pricing-features {\n            list-style: none;\n            margin: 2rem 0;\n          }\n          .pricing-features li {\n            padding: 0.5rem 0;\n            color: var(--text-muted);\n          }\n          .pricing-features li::before {\n            content: '✓';\n            color: var(--success);\n            font-weight: bold;\n            margin-right: 0.5rem;\n          }\n          .pricing-cta {\n            width: 100%;\n            background: var(--gradient);\n            border: none;\n            color: white;\n            padding: 1rem;\n            border-radius: 0.5rem;\n            font-weight: 600;\n            cursor: pointer;\n            transition: all 0.3s ease;\n          }\n          .pricing-cta:hover {\n            transform: translateY(-2px);\n            box-shadow: 0 8px 25px rgba(79,70,229,0.3);\n          }\n        "
+      }
+    }
+  },
+  "components": {
+    "navigation": {
+      "css": "\n        .navbar {\n          display: flex;\n          align-items: center;\n          justify-content: space-between;\n          padding: var(--space-lg) var(--space-xl);\n          background: var(--surface, #ffffff);\n          border-bottom: 1px solid var(--border, #e5e7eb);\n          backdrop-filter: blur(10px);\n          position: sticky;\n          top: 0;\n          z-index: 1000;\n        }\n        .navbar-brand {\n          font-size: 1.5rem;\n          font-weight: 700;\n          color: var(--accent, #6366f1);\n          text-decoration: none;\n        }\n        .navbar-nav {\n          display: flex;\n          align-items: center;\n          gap: var(--space-lg);\n          list-style: none;\n        }\n        .navbar-link {\n          color: var(--text, #111827);\n          text-decoration: none;\n          font-weight: 500;\n          padding: var(--space-sm) var(--space-md);\n          border-radius: 6px;\n          transition: all 0.2s ease;\n        }\n        .navbar-link:hover,\n        .navbar-link.active {\n          color: var(--accent, #6366f1);\n          background: rgba(99, 102, 241, 0.1);\n        }\n        .navbar-toggle {\n          display: none;\n          background: none;\n          border: none;\n          cursor: pointer;\n          padding: var(--space-sm);\n        }\n        @media (max-width: 768px) {\n          .navbar-nav {\n            display: none;\n            position: absolute;\n            top: 100%;\n            left: 0;\n            right: 0;\n            background: var(--surface, #ffffff);\n            border-top: 1px solid var(--border, #e5e7eb);\n            flex-direction: column;\n            padding: var(--space-lg);\n          }\n          .navbar-nav.active {\n            display: flex;\n          }\n          .navbar-toggle {\n            display: block;\n          }\n        }\n      "
+    },
+    "buttons": {
+      "css": "\n        .btn {\n          display: inline-flex;\n          align-items: center;\n          justify-content: center;\n          gap: var(--space-sm);\n          padding: var(--space-md) var(--space-lg);\n          border: 1px solid transparent;\n          border-radius: 8px;\n          font-size: 1rem;\n          font-weight: 500;\n          text-decoration: none;\n          cursor: pointer;\n          transition: all 0.2s ease;\n          white-space: nowrap;\n        }\n        .btn:disabled {\n          opacity: 0.5;\n          cursor: not-allowed;\n        }\n        .btn-primary {\n          background: var(--accent, #6366f1);\n          color: white;\n          border-color: var(--accent, #6366f1);\n        }\n        .btn-primary:hover:not(:disabled) {\n          background: var(--accent2, #4f46e5);\n          border-color: var(--accent2, #4f46e5);\n          transform: translateY(-1px);\n          box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);\n        }\n        .btn-secondary {\n          background: transparent;\n          color: var(--text, #111827);\n          border-color: var(--border, #e5e7eb);\n        }\n        .btn-secondary:hover:not(:disabled) {\n          background: var(--surface, #f9fafb);\n          border-color: var(--accent, #6366f1);\n          color: var(--accent, #6366f1);\n        }\n        .btn-ghost {\n          background: transparent;\n          color: var(--text-muted, #6b7280);\n          border: none;\n        }\n        .btn-ghost:hover:not(:disabled) {\n          background: rgba(99, 102, 241, 0.1);\n          color: var(--accent, #6366f1);\n        }\n        .btn-sm {\n          padding: var(--space-sm) var(--space-md);\n          font-size: 0.875rem;\n        }\n        .btn-lg {\n          padding: var(--space-lg) var(--space-xl);\n          font-size: 1.125rem;\n        }\n        .btn-full {\n          width: 100%;\n        }\n      "
+    },
+    "forms": {
+      "css": "\n        .form-group {\n          margin-bottom: var(--space-lg);\n        }\n        .form-label {\n          display: block;\n          font-weight: 500;\n          color: var(--text, #111827);\n          margin-bottom: var(--space-sm);\n        }\n        .form-input,\n        .form-select,\n        .form-textarea {\n          width: 100%;\n          padding: var(--space-md);\n          border: 1px solid var(--border, #e5e7eb);\n          border-radius: 8px;\n          font-size: 1rem;\n          background: var(--surface, #ffffff);\n          color: var(--text, #111827);\n          transition: all 0.2s ease;\n        }\n        .form-input:focus,\n        .form-select:focus,\n        .form-textarea:focus {\n          outline: none;\n          border-color: var(--accent, #6366f1);\n          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);\n        }\n        .form-input:invalid {\n          border-color: #ef4444;\n        }\n        .form-input:invalid:focus {\n          box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);\n        }\n        .form-help {\n          font-size: 0.875rem;\n          color: var(--text-muted, #6b7280);\n          margin-top: var(--space-sm);\n        }\n        .form-error {\n          font-size: 0.875rem;\n          color: #ef4444;\n          margin-top: var(--space-sm);\n        }\n        .checkbox-group,\n        .radio-group {\n          display: flex;\n          align-items: center;\n          gap: var(--space-sm);\n        }\n        .form-checkbox,\n        .form-radio {\n          width: 1rem;\n          height: 1rem;\n          accent-color: var(--accent, #6366f1);\n        }\n      "
+    },
+    "alerts": {
+      "css": "\n        .alert {\n          padding: var(--space-lg);\n          border-radius: 8px;\n          border: 1px solid;\n          margin-bottom: var(--space-lg);\n          display: flex;\n          align-items: flex-start;\n          gap: var(--space-md);\n        }\n        .alert-success {\n          background: #f0fdf4;\n          border-color: #bbf7d0;\n          color: #166534;\n        }\n        .alert-warning {\n          background: #fffbeb;\n          border-color: #fed7aa;\n          color: #9a3412;\n        }\n        .alert-error {\n          background: #fef2f2;\n          border-color: #fecaca;\n          color: #dc2626;\n        }\n        .alert-info {\n          background: #eff6ff;\n          border-color: #bfdbfe;\n          color: #1d4ed8;\n        }\n        .alert-icon {\n          flex-shrink: 0;\n          width: 1.25rem;\n          height: 1.25rem;\n        }\n        .alert-content {\n          flex: 1;\n        }\n        .alert-title {\n          font-weight: 600;\n          margin-bottom: var(--space-sm);\n        }\n        .alert-description {\n          opacity: 0.9;\n        }\n      "
+    },
+    "glassCard": {
+      "css": "\n        .glass-card {\n          background: rgba(255, 255, 255, 0.1);\n          backdrop-filter: blur(10px);\n          border: 1px solid rgba(255, 255, 255, 0.2);\n          border-radius: 1rem;\n          padding: 2rem;\n          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);\n        }\n      "
+    },
+    "neonButton": {
+      "css": "\n        .neon-btn {\n          background: transparent;\n          border: 2px solid var(--accent);\n          color: var(--accent);\n          padding: 1rem 2rem;\n          border-radius: 0.5rem;\n          font-weight: 600;\n          text-transform: uppercase;\n          letter-spacing: 1px;\n          transition: all 0.3s ease;\n          box-shadow: 0 0 20px transparent;\n        }\n        .neon-btn:hover {\n          background: var(--accent);\n          color: var(--primary);\n          box-shadow: 0 0 20px var(--accent);\n          transform: translateY(-2px);\n        }\n      "
+    },
+    "flipCards": {
+      "css": "\n        .flip-card {\n          background-color: transparent;\n          width: 300px;\n          height: 300px;\n          perspective: 1000px;\n        }\n        .flip-card-inner {\n          position: relative;\n          width: 100%;\n          height: 100%;\n          text-align: center;\n          transition: transform 0.6s;\n          transform-style: preserve-3d;\n        }\n        .flip-card:hover .flip-card-inner {\n          transform: rotateY(180deg);\n        }\n        .flip-card-front, .flip-card-back {\n          position: absolute;\n          width: 100%;\n          height: 100%;\n          -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n          border-radius: 1rem;\n          display: flex;\n          align-items: center;\n          justify-content: center;\n        }\n        .flip-card-front {\n          background: var(--gradient);\n        }\n        .flip-card-back {\n          background: var(--secondary);\n          border: 2px solid var(--accent);\n          transform: rotateY(180deg);\n        }\n      "
+    },
+    "modals": {
+      "css": "\n        .modal-overlay {\n          position: fixed;\n          top: 0;\n          left: 0;\n          right: 0;\n          bottom: 0;\n          background: rgba(0, 0, 0, 0.5);\n          backdrop-filter: blur(4px);\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          z-index: 1000;\n          padding: var(--space-lg);\n        }\n        .modal {\n          background: var(--surface, #ffffff);\n          border-radius: 12px;\n          padding: var(--space-xl);\n          max-width: 500px;\n          width: 100%;\n          max-height: 90vh;\n          overflow-y: auto;\n          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);\n          animation: modalSlideIn 0.3s ease-out;\n        }\n        @keyframes modalSlideIn {\n          from {\n            opacity: 0;\n            transform: translateY(-20px) scale(0.95);\n          }\n          to {\n            opacity: 1;\n            transform: translateY(0) scale(1);\n          }\n        }\n        .modal-header {\n          display: flex;\n          align-items: center;\n          justify-content: space-between;\n          margin-bottom: var(--space-lg);\n          padding-bottom: var(--space-lg);\n          border-bottom: 1px solid var(--border, #e5e7eb);\n        }\n        .modal-title {\n          font-size: 1.25rem;\n          font-weight: 600;\n          color: var(--text, #111827);\n        }\n        .modal-close {\n          background: none;\n          border: none;\n          font-size: 1.5rem;\n          cursor: pointer;\n          color: var(--text-muted, #6b7280);\n          padding: var(--space-sm);\n          border-radius: 4px;\n          transition: color 0.2s ease;\n        }\n        .modal-close:hover {\n          color: var(--text, #111827);\n        }\n        .modal-body {\n          margin-bottom: var(--space-lg);\n        }\n        .modal-footer {\n          display: flex;\n          gap: var(--space-md);\n          justify-content: flex-end;\n          padding-top: var(--space-lg);\n          border-top: 1px solid var(--border, #e5e7eb);\n        }\n      "
+    },
+    "loading": {
+      "css": "\n        .loading-spinner {\n          width: 2rem;\n          height: 2rem;\n          border: 2px solid var(--border, #e5e7eb);\n          border-top: 2px solid var(--accent, #6366f1);\n          border-radius: 50%;\n          animation: spin 1s linear infinite;\n        }\n        @keyframes spin {\n          to {\n            transform: rotate(360deg);\n          }\n        }\n        .loading-dots {\n          display: inline-flex;\n          gap: 4px;\n        }\n        .loading-dot {\n          width: 6px;\n          height: 6px;\n          border-radius: 50%;\n          background: var(--accent, #6366f1);\n          animation: loadingDots 1.4s ease-in-out infinite both;\n        }\n        .loading-dot:nth-child(1) { animation-delay: -0.32s; }\n        .loading-dot:nth-child(2) { animation-delay: -0.16s; }\n        @keyframes loadingDots {\n          0%, 80%, 100% {\n            transform: scale(0);\n          }\n          40% {\n            transform: scale(1);\n          }\n        }\n        .loading-skeleton {\n          background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);\n          background-size: 200% 100%;\n          animation: shimmer 2s infinite;\n        }\n        @keyframes shimmer {\n          0% {\n            background-position: -200% 0;\n          }\n          100% {\n            background-position: 200% 0;\n          }\n        }\n      "
+    },
+    "floatingActions": {
+      "css": "\n        .fab-container {\n          position: fixed;\n          bottom: 2rem;\n          right: 2rem;\n          z-index: 1000;\n        }\n        .fab-main {\n          width: 60px;\n          height: 60px;\n          border-radius: 50%;\n          background: var(--gradient);\n          border: none;\n          color: white;\n          font-size: 1.5rem;\n          cursor: pointer;\n          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);\n          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n        }\n        .fab-main:hover {\n          transform: scale(1.1);\n          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);\n        }\n        .fab-submenu {\n          position: absolute;\n          bottom: 80px;\n          right: 0;\n          display: flex;\n          flex-direction: column;\n          gap: 1rem;\n          opacity: 0;\n          transform: translateY(20px);\n          transition: all 0.3s ease;\n          pointer-events: none;\n        }\n        .fab-container.open .fab-submenu {\n          opacity: 1;\n          transform: translateY(0);\n          pointer-events: all;\n        }\n      "
+    }
+  }
+}

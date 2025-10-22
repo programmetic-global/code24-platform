@@ -944,11 +944,11 @@ const Code24Platform = () => {
                 </div>
                 
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600 mb-2">From $99/mo</div>
+                  <div className="text-2xl font-bold text-blue-600 mb-2">From $149/mo</div>
                   <div className="text-sm text-blue-600 mb-4">Includes AI Worker team that works for you forever</div>
-                  <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 w-full">
-                    Start Building Now
-                  </button>
+                  <a href="https://buy.stripe.com/28E8wO9vT2n01CtbfUdfG0i" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 w-full text-center block">
+                    Start 14-Day Trial - BUILD
+                  </a>
                 </div>
               </div>
               
@@ -994,11 +994,11 @@ const Code24Platform = () => {
                 </div>
                 
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-emerald-600 mb-2">From $149/mo</div>
+                  <div className="text-2xl font-bold text-emerald-600 mb-2">From $99/mo</div>
                   <div className="text-sm text-emerald-600 mb-4">Includes AI Worker team that transforms and optimizes forever</div>
-                  <button className="bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-emerald-700 transition-all transform hover:scale-105 w-full">
-                    Start Transformation Now
-                  </button>
+                  <a href="https://buy.stripe.com/6oU5kC37v9PsepfcjYdfG0h" target="_blank" rel="noopener noreferrer" className="bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-emerald-700 transition-all transform hover:scale-105 w-full text-center block">
+                    Start 14-Day Trial - OPTIMIZE
+                  </a>
                 </div>
               </div>
             </div>
@@ -1537,7 +1537,7 @@ const Code24Platform = () => {
               },
               {
                 id: 'build-vs-optimize',
-                question: 'Should I choose BUILD ($99/mo) or OPTIMIZE ($149/mo)?',
+                question: 'Should I choose BUILD ($149/mo) or OPTIMIZE ($99/mo)?',
                 answer: 'Choose BUILD if you need a new website built from scratch by our AI Worker team in 3-8 minutes. Choose OPTIMIZE if you have an existing website that needs to be transformed into a learning machine that beats competitors. Both include the same 7 AI Workers working for you forever, with OPTIMIZE including additional resurrection and competitive analysis features.'
               },
               {
@@ -1599,14 +1599,14 @@ const Code24Platform = () => {
               Join the revolution. Get your AI Worker team and watch your website beat competition every single day.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 flex items-center space-x-2">
-                <span>Start Building - $99/mo</span>
+              <a href="https://buy.stripe.com/28E8wO9vT2n01CtbfUdfG0i" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 flex items-center space-x-2">
+                <span>Start Building - $149/mo</span>
                 <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-all transform hover:scale-105 flex items-center space-x-2">
-                <span>Optimize Existing - $149/mo</span>
+              </a>
+              <a href="https://buy.stripe.com/6oU5kC37v9PsepfcjYdfG0h" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-all transform hover:scale-105 flex items-center space-x-2">
+                <span>Optimize Existing - $99/mo</span>
                 <Zap className="w-5 h-5" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

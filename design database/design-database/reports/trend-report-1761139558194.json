@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-10-22T13:25:58.194Z",
+  "summary": {
+    "totalTrends": 12,
+    "emergingTrends": 4,
+    "stableTrends": 1,
+    "categories": 5
+  },
+  "insights": [
+    "Neo-Tokyo aesthetic showing strong growth in gaming and tech sectors",
+    "Variable fonts adoption increasing for dynamic typography",
+    "Asymmetric layouts breaking traditional grid boundaries",
+    "Haptic feedback simulations emerging for better UX",
+    "Floating elements creating spatial depth in designs"
+  ],
+  "recommendations": [
+    "Implement neo-Tokyo palette for tech-focused projects",
+    "Adopt variable fonts for dynamic typography experiences",
+    "Experiment with asymmetric grids for modern layouts",
+    "Add haptic feedback simulation to interactive elements",
+    "Consider floating element layouts for premium feel"
+  ]
+}

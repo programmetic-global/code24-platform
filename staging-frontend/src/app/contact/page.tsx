@@ -130,13 +130,13 @@ const ContactPage = () => {
               <div className="text-4xl mb-4">🏗️</div>
               <h3 className="text-xl font-bold mb-2 text-gray-900">BUILD - New Website</h3>
               <p className="text-gray-600 mb-4">Professional website in 3-8 minutes + AI Workers forever</p>
-              <div className="text-2xl font-bold text-blue-600">$99/month</div>
+              <div className="text-2xl font-bold text-blue-600">$149/month</div>
             </div>
             <div className="text-center p-8 bg-white rounded-3xl border border-blue-200 shadow-sm">
               <div className="text-4xl mb-4">⚡</div>
               <h3 className="text-xl font-bold mb-2 text-gray-900">OPTIMIZE - Existing Site</h3>
               <p className="text-gray-600 mb-4">Transform any website into a learning machine</p>
-              <div className="text-2xl font-bold text-indigo-600">$149/month</div>
+              <div className="text-2xl font-bold text-indigo-600">$99/month</div>
             </div>
           </div>
         </div>
@@ -270,8 +270,8 @@ const ContactPage = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
-                  <option value="BUILD">BUILD - New Website ($99/mo)</option>
-                  <option value="OPTIMIZE">OPTIMIZE - Existing Website ($149/mo)</option>
+                  <option value="BUILD">BUILD - New Website ($149/mo)</option>
+                  <option value="OPTIMIZE">OPTIMIZE - Existing Website ($99/mo)</option>
                   <option value="ENTERPRISE">ENTERPRISE - Custom Solution</option>
                   <option value="CONSULTATION">Just want to learn more</option>
                 </select>
@@ -369,11 +369,11 @@ const ContactPage = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/#build" className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
-              <span>Start Building - $99/mo</span>
+              <span>Start Building - $149/mo</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/#optimize" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
-              <span>Optimize Existing - $149/mo</span>
+              <span>Optimize Existing - $99/mo</span>
               <Zap className="w-5 h-5" />
             </Link>
           </div>

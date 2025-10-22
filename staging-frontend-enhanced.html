@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code24 - Advanced 2025 Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* CODE24 DESIGN SYSTEM - ENHANCED WITH ADVANCED ANIMATIONS */
+    
+    :root {
+      --primary: #0F0F0F;
+      --secondary: #1A1A1A;
+      --accent: #00F5FF;
+      --accent2: #FF0080;
+      --text: #FFFFFF;
+      --text-muted: #A0A0A0;
+      --success: #00FF88;
+      --warning: #FFB800;
+      --gradient: linear-gradient(135deg, #00F5FF 0%, #FF0080 100%);
+      
+      --font-heading: Inter, system-ui, sans-serif;
+      --font-body: Inter, system-ui, sans-serif;
+      
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+      --space-3xl: 4rem;
+      
+      --radius-sm: 0.25rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+      --shadow-glow: 0 0 20px var(--accent);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--primary);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 1.125rem;
+      overflow-x: hidden;
+    }
+
+    /* Enhanced Hero with Morphing Background */
+    .hero-enhanced {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .morphing-bg {
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: var(--gradient);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      animation: morph 8s ease-in-out infinite;
+      z-index: -1;
+      opacity: 0.8;
+    }
+    
+    @keyframes morph {
+      0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+      25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+      50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+      75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+      100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    }
+
+    .hero-title-enhanced {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 0.9;
+      margin-bottom: 2rem;
+      background: linear-gradient(45deg, #fff, rgba(255,255,255,0.7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textGlow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes textGlow {
+      from { filter: drop-shadow(0 0 20px rgba(255,255,255,0.5)); }
+      to { filter: drop-shadow(0 0 30px rgba(255,255,255,0.8)); }
+    }
+
+    /* Text Reveal Animation */
+    .text-reveal {
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .text-reveal-line {
+      transform: translateY(100%);
+      animation: revealText 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    }
+    
+    @keyframes revealText {
+      to { transform: translateY(0); }
+    }
+
+    /* Enhanced Bento Grid with Flip Cards */
+    .bento-enhanced {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background: var(--secondary);
+    }
+
+    .flip-card {
+      background-color: transparent;
+      height: 300px;
+      perspective: 1000px;
+    }
+    
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .flip-card-front {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+    }
+    
+    .flip-card-back {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transform: rotateY(180deg);
+    }
+
+    /* Progress Bar Section with Animations */
+    .stats-section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .progress-demo {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .progress-item {
+      text-align: left;
+    }
+
+    .progress-container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+      position: relative;
+      margin-top: 0.5rem;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background: var(--gradient);
+      border-radius: 10px;
+      transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      width: 0%;
+    }
+    
+    .progress-bar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    .stat-counter {
+      font-size: 3rem;
+      font-weight: 900;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 2rem 0;
+      transform: scale(0.5);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+    
+    .stat-counter.animate {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    /* Enhanced Buttons */
+    .magnetic-btn {
+      position: relative;
+      transition: transform 0.1s ease;
+      cursor: pointer;
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 20px transparent;
+      overflow: hidden;
+    }
+    
+    .magnetic-btn::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: var(--gradient);
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+    
+    .magnetic-btn:hover::before {
+      opacity: 1;
+    }
+    
+    .magnetic-btn:hover {
+      color: var(--primary);
+      box-shadow: 0 0 20px var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Floating Action Button */
+    .fab-container {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+    }
+    
+    .fab-main {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--gradient);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .fab-main:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Utility Classes */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-lg);
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glow {
+      box-shadow: var(--shadow-glow);
+    }
+
+    .mb-xl {
+      margin-bottom: var(--space-xl);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title-enhanced {
+        font-size: clamp(2rem, 6vw, 3rem);
+      }
+      
+      .bento-enhanced {
+        grid-template-columns: 1fr;
+        padding: var(--space-md);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Enhanced Hero Section with Morphing Background -->
+  <section class="hero-enhanced">
+    <div class="morphing-bg"></div>
+    <div class="container">
+      <h1 class="hero-title-enhanced text-reveal">
+        <div class="text-reveal-line">Advanced Design</div>
+        <div class="text-reveal-line">System 2025</div>
+      </h1>
+      <div class="text-reveal">
+        <p class="text-reveal-line" style="font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.9;">
+          Experience cutting-edge animations and micro-interactions
+        </p>
+      </div>
+      <button class="magnetic-btn" id="heroBtn">
+        Explore Features
+      </button>
+    </div>
+  </section>
+
+  <!-- Enhanced Bento Grid with Flip Cards -->
+  <section class="bento-enhanced">
+    <div class="container">
+      <h2 class="gradient-text mb-xl" style="text-align: center; font-size: 3rem;">
+        Interactive Components
+      </h2>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Morphing Shapes</h3>
+            <p>Dynamic background animations</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Behind the Magic</h3>
+            <p>CSS animations with custom easing functions create fluid, organic movement patterns.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Text Reveals</h3>
+            <p>Stunning typography animations</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Implementation</h3>
+            <p>Transform animations with cubic-bezier timing for smooth, professional reveals.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>3D Interactions</h3>
+            <p>Modern flip card effects</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>CSS 3D</h3>
+            <p>Perspective and transform-style properties create immersive 3D experiences.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Magnetic Buttons</h3>
+            <p>Responsive hover effects</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Mouse Tracking</h3>
+            <p>JavaScript calculates mouse position for realistic magnetic attraction effects.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Progress Section -->
+  <section class="stats-section">
+    <div class="container">
+      <h2 class="gradient-text mb-xl">Performance Metrics</h2>
+      
+      <div class="stat-counter" id="designCounter">0</div>
+      <p style="margin-bottom: 3rem; font-size: 1.2rem;">Design Components Created</p>
+      
+      <div class="progress-demo">
+        <div class="progress-item">
+          <h4>Animation Performance</h4>
+          <div class="progress-container">
+            <div class="progress-bar" data-width="95"></div>
+          </div>
+        </div>
+        
+        <div class="progress-item">
+          <h4>User Engagement</h4>
+          <div class="progress-container">
+            <div class="progress-bar" data-width="88"></div>
+          </div>
+        </div>
+        
+        <div class="progress-item">
+          <h4>Design Impact</h4>
+          <div class="progress-container">
+            <div class="progress-bar" data-width="92"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="padding: 4rem 0; text-align: center;">
+    <div class="container">
+      <h2 class="mb-xl">Ready for the Future?</h2>
+      <button class="magnetic-btn glow" id="ctaBtn">
+        Start Building
+      </button>
+    </div>
+  </section>
+
+  <!-- Floating Action Button -->
+  <div class="fab-container">
+    <button class="fab-main" onclick="scrollToTop()">↑</button>
+  </div>
+
+  <script>
+    // Text reveal animation on load
+    document.addEventListener('DOMContentLoaded', function() {
+      const revealLines = document.querySelectorAll('.text-reveal-line');
+      revealLines.forEach((line, index) => {
+        line.style.animationDelay = `${index * 0.2}s`;
+      });
+    });
+
+    // Magnetic button effects
+    document.querySelectorAll('.magnetic-btn').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) translateY(-2px)`;
+      });
+      
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0, 0) translateY(0)';
+      });
+    });
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animate progress bars
+          if (entry.target.classList.contains('progress-bar')) {
+            const width = entry.target.getAttribute('data-width');
+            entry.target.style.width = width + '%';
+          }
+          
+          // Animate counter
+          if (entry.target.id === 'designCounter') {
+            animateCounter(entry.target, 147);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements
+    document.querySelectorAll('.progress-bar').forEach(bar => {
+      observer.observe(bar);
+    });
+
+    const counter = document.getElementById('designCounter');
+    if (counter) {
+      observer.observe(counter);
+    }
+
+    // Counter animation
+    function animateCounter(element, target) {
+      element.classList.add('animate');
+      let current = 0;
+      const increment = target / 60; // 60 frames for smooth animation
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        element.textContent = Math.floor(current);
+      }, 1000 / 60);
+    }
+
+    // Scroll to top function
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Add click handlers for interactive demos
+    document.getElementById('heroBtn').addEventListener('click', () => {
+      document.querySelector('.bento-enhanced').scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+
+    document.getElementById('ctaBtn').addEventListener('click', () => {
+      // Demo of loading state
+      const btn = document.getElementById('ctaBtn');
+      const originalText = btn.textContent;
+      btn.textContent = 'Loading...';
+      btn.style.opacity = '0.7';
+      
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.opacity = '1';
+        alert('Ready to transform your designs!');
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
