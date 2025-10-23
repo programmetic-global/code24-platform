@@ -7,32 +7,6 @@ import { ArrowLeft, Check, ArrowRight, Zap, Crown, Building, Sparkles, Shield, T
 const PricingPage = () => {
   const plans = [
     {
-      name: "BUILD",
-      price: "$149",
-      period: "per month",
-      description: "Perfect for new websites that need to dominate from day one",
-      features: [
-        "Complete website built in 3-8 minutes",
-        "7 AI Workers team working forever",
-        "Professional design optimized for your industry",
-        "Mobile-responsive and fast-loading",
-        "SEO optimization for Google + AI search engines",
-        "Competitive intelligence integration",
-        "24/7 continuous learning and improvement",
-        "Performance guarantee or work free",
-        "300-500% ROI within 90 days",
-        "Custom domain included",
-        "SSL certificate and security",
-        "Analytics and performance tracking",
-        "Priority support"
-      ],
-      cta: "Start 14-Day Trial",
-      badge: "Most Popular",
-      color: "blue",
-      icon: <ArrowRight className="w-6 h-6" />,
-      stripeUrl: "https://buy.stripe.com/28E8wO9vT2n01CtbfUdfG0i"
-    },
-    {
       name: "OPTIMIZE",
       price: "$99", 
       period: "per month",
@@ -54,10 +28,37 @@ const PricingPage = () => {
         "Premium support and consultation"
       ],
       cta: "Start 14-Day Trial",
-      badge: "Best Value",
+      badge: "Most Popular",
       color: "indigo",
       icon: <Zap className="w-6 h-6" />,
       stripeUrl: "https://buy.stripe.com/6oU5kC37v9PsepfcjYdfG0h"
+    },
+    {
+      name: "OPTIMIZE PRO",
+      price: "$149",
+      period: "per month",
+      description: "Enhanced psychology-based optimization with deep conversion analysis",
+      features: [
+        "Everything in OPTIMIZE, plus:",
+        "🧠 Deep CRO Psychology Audit (Cialdini's principles)",
+        "📊 Baymard Institute UX research integration",
+        "🧪 Automated A/B testing with psychological insights",
+        "⚡ Quick Win implementations (security badges, urgency)",
+        "🎯 Conversion psychology optimization",
+        "📈 Trust & credibility analysis and fixes",
+        "🔬 UX friction detection and elimination",
+        "💡 Strategic psychology recommendations",
+        "🆚 Competitive psychology benchmarking",
+        "🧠 The Strategist AI Worker (CRO specialist)",
+        "📊 Advanced conversion metrics and reporting",
+        "🎨 Psychology-driven design improvements",
+        "Priority CRO support and consultation"
+      ],
+      cta: "Start 14-Day Trial",
+      badge: "Enhanced Psychology",
+      color: "purple",
+      icon: <Target className="w-6 h-6" />,
+      stripeUrl: "https://buy.stripe.com/28E8wO9vT2n01CtbfUdfG0i"
     },
     {
       name: "ENTERPRISE",
@@ -81,7 +82,7 @@ const PricingPage = () => {
       ],
       cta: "Contact Sales",
       badge: "Enterprise",
-      color: "purple",
+      color: "gray",
       icon: <Crown className="w-6 h-6" />
     }
   ];
@@ -89,50 +90,50 @@ const PricingPage = () => {
   const comparison = [
     {
       feature: "Setup Time",
-      build: "3-8 minutes",
       optimize: "5-10 minutes",
+      optimizePro: "5-10 minutes",
       traditional: "2-6 months"
     },
     {
       feature: "AI Workers",
-      build: "7 specialists",
       optimize: "7 specialists",
+      optimizePro: "7 specialists + CRO",
       traditional: "0"
     },
     {
       feature: "Continuous Learning",
-      build: "24/7/365",
-      optimize: "24/7/365", 
+      optimize: "24/7/365",
+      optimizePro: "24/7/365", 
       traditional: "Never"
     },
     {
-      feature: "Competitive Intelligence",
-      build: "Real-time",
-      optimize: "Real-time",
+      feature: "Psychology Analysis",
+      optimize: "Basic",
+      optimizePro: "Deep CRO + Cialdini",
       traditional: "Manual only"
     },
     {
       feature: "AI Search Optimization (GEO)",
-      build: "Included",
       optimize: "Included",
+      optimizePro: "Included + Enhanced",
       traditional: "Not available"
     },
     {
       feature: "Performance Guarantee",
-      build: "Guaranteed",
       optimize: "Guaranteed",
+      optimizePro: "Guaranteed",
       traditional: "No guarantee"
     },
     {
       feature: "5-Year Total Cost",
-      build: "$5,940",
-      optimize: "$8,940",
+      optimize: "$5,940",
+      optimizePro: "$8,940",
       traditional: "$160,000+"
     },
     {
       feature: "ROI Potential",
-      build: "300-500%",
       optimize: "200-400%",
+      optimizePro: "300-500%",
       traditional: "Often negative"
     }
   ];
@@ -217,6 +218,13 @@ const PricingPage = () => {
                   badge: "bg-purple-600 text-white",
                   button: "bg-purple-600 hover:bg-purple-700 text-white",
                   accent: "text-purple-600"
+                },
+                gray: {
+                  bg: "from-gray-50 to-gray-100",
+                  border: "border-gray-300", 
+                  badge: "bg-gray-600 text-white",
+                  button: "bg-gray-600 hover:bg-gray-700 text-white",
+                  accent: "text-gray-600"
                 }
               };
               
@@ -282,8 +290,8 @@ const PricingPage = () => {
                 <thead className="bg-gray-900 text-white">
                   <tr>
                     <th className="text-left p-6 font-semibold">Feature</th>
-                    <th className="text-center p-6 font-semibold">BUILD ($149/mo)</th>
                     <th className="text-center p-6 font-semibold">OPTIMIZE ($99/mo)</th>
+                    <th className="text-center p-6 font-semibold">OPTIMIZE PRO ($149/mo)</th>
                     <th className="text-center p-6 font-semibold">Traditional Web Dev</th>
                   </tr>
                 </thead>
@@ -291,8 +299,8 @@ const PricingPage = () => {
                   {comparison.map((row, index) => (
                     <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
                       <td className="p-6 font-medium text-gray-900">{row.feature}</td>
-                      <td className="p-6 text-center text-blue-600 font-semibold">{row.build}</td>
                       <td className="p-6 text-center text-indigo-600 font-semibold">{row.optimize}</td>
+                      <td className="p-6 text-center text-purple-600 font-semibold">{row.optimizePro}</td>
                       <td className="p-6 text-center text-red-500 font-semibold">{row.traditional}</td>
                     </tr>
                   ))}
@@ -345,7 +353,7 @@ const PricingPage = () => {
               <h3 className="text-2xl font-bold text-green-600 mb-6">Code24 5-Year Investment</h3>
               <div className="space-y-4">
                 <div className="flex justify-between">
-                  <span>BUILD Service (60 months):</span>
+                  <span>OPTIMIZE Service (60 months):</span>
                   <span className="font-semibold">$5,940</span>
                 </div>
                 <div className="flex justify-between">
@@ -417,19 +425,19 @@ const PricingPage = () => {
       {/* CTA Section */}
       <section className="py-24 px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6 text-gray-900">Ready to Start Winning?</h2>
+          <h2 className="text-4xl font-bold mb-6 text-white">Ready to Start Winning?</h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             Choose your path to competitive dominance. Both plans guarantee you'll beat competition.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/#build" className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
-              <span>Start Building - $149/mo</span>
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link href="/#optimize" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
-              <span>Optimize Existing - $99/mo</span>
+            <Link href="/#optimize" className="bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
+              <span>Start Optimizing - $99/mo</span>
               <Zap className="w-5 h-5" />
+            </Link>
+            <Link href="/#optimize-pro" className="bg-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
+              <span>Enhanced Psychology - $149/mo</span>
+              <Target className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -456,8 +464,8 @@ const PricingPage = () => {
               <div className="space-y-2 text-sm">
                 <Link href="/features" className="block text-gray-600 hover:text-gray-900">Features</Link>
                 <Link href="/pricing" className="block text-gray-600 hover:text-gray-900">Pricing</Link>
-                <Link href="/#build" className="block text-gray-600 hover:text-gray-900">BUILD Service</Link>
                 <Link href="/#optimize" className="block text-gray-600 hover:text-gray-900">OPTIMIZE Service</Link>
+                <Link href="/#optimize-pro" className="block text-gray-600 hover:text-gray-900">OPTIMIZE PRO Service</Link>
               </div>
             </div>
             

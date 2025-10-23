@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://staging.code24.dev' : '',
+  // Remove assetPrefix to allow Pages deployments to work
   env: {
     ELITE_WORKERS_API: process.env.NODE_ENV === 'production' 
       ? 'https://staging.code24.dev/elite' 

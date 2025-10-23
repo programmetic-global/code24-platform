@@ -152,93 +152,157 @@ export default function Dashboard() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-8">
-          <Link
-            href="/dashboard/build"
-            className="flex-1 bg-blue-600 text-white rounded-lg p-6 hover:bg-blue-700 transition-colors group"
-          >
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                <Zap className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold">Start BUILD Project</h3>
-                <p className="text-blue-100">AI Workers build a new website from scratch</p>
-              </div>
-              <Plus className="w-6 h-6 ml-auto group-hover:scale-110 transition-transform" />
-            </div>
-          </Link>
-
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <Link
             href="/dashboard/optimize"
-            className="flex-1 bg-emerald-600 text-white rounded-lg p-6 hover:bg-emerald-700 transition-colors group"
+            className="bg-gradient-to-br from-emerald-600 to-teal-600 text-white rounded-xl p-6 hover:from-emerald-700 hover:to-teal-700 transition-all transform hover:scale-105 group shadow-lg"
           >
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                <TrendingUp className="w-6 h-6" />
+              <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                <div className="text-2xl">🧠</div>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold">Start OPTIMIZE Project</h3>
-                <p className="text-emerald-100">AI Workers transform your existing website</p>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold mb-1">Start OPTIMIZE Project</h3>
+                <p className="text-emerald-100 text-sm mb-2">AI Workers + The Strategist (CRO) transform your existing website</p>
+                <div className="flex space-x-2 text-xs text-emerald-200">
+                  <span>✓ Technical fixes</span>
+                  <span>✓ CRO psychology</span>
+                  <span>✓ A/B testing</span>
+                </div>
               </div>
               <Plus className="w-6 h-6 ml-auto group-hover:scale-110 transition-transform" />
             </div>
           </Link>
+
+          <div className="bg-gradient-to-br from-blue-100 to-indigo-100 border-2 border-dashed border-blue-300 rounded-xl p-6 opacity-75">
+            <div className="flex items-center space-x-4">
+              <div className="w-14 h-14 bg-blue-200 rounded-xl flex items-center justify-center">
+                <Zap className="w-6 h-6 text-blue-600" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold text-blue-800 mb-1">BUILD Project</h3>
+                <p className="text-blue-600 text-sm mb-2">AI Workers build new websites from scratch</p>
+                <div className="text-xs text-blue-500">
+                  <span className="bg-blue-200 px-2 py-1 rounded">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Projects List */}
-        <div className="bg-white rounded-lg shadow-sm border">
-          <div className="px-6 py-4 border-b">
-            <h2 className="text-lg font-semibold text-gray-900">Recent Projects</h2>
+        {/* Projects List with CRO Insights */}
+        <div className="bg-white rounded-xl shadow-sm border">
+          <div className="px-6 py-4 border-b bg-gradient-to-r from-gray-50 to-blue-50">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl font-bold text-gray-900">Active Optimization Projects</h2>
+              <div className="flex items-center space-x-2 text-sm text-blue-600">
+                <span className="text-lg">🧠</span>
+                <span className="font-medium">Deep CRO Analysis Active</span>
+              </div>
+            </div>
           </div>
           
           <div className="divide-y">
             {projects.map((project) => (
-              <div key={project.id} className="px-6 py-4 hover:bg-gray-50 transition-colors">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2">
-                      {getStatusIcon(project.status)}
-                      <div>
-                        <h3 className="font-medium text-gray-900">{project.name}</h3>
-                        <div className="flex items-center space-x-4 text-sm text-gray-500">
-                          <span className="capitalize">{project.type}</span>
-                          <span>•</span>
-                          <span>{new Date(project.createdAt).toLocaleDateString()}</span>
+              <div key={project.id} className="px-6 py-6 hover:bg-gray-50 transition-colors">
+                <div className="space-y-4">
+                  {/* Project Header */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-3">
+                        {getStatusIcon(project.status)}
+                        <div>
+                          <h3 className="font-semibold text-gray-900 text-lg">{project.name}</h3>
+                          <div className="flex items-center space-x-4 text-sm text-gray-500">
+                            <span className="capitalize bg-gray-100 px-2 py-1 rounded text-xs font-medium">
+                              {project.type === 'optimize' ? 'OPTIMIZE + CRO' : project.type}
+                            </span>
+                            <span>•</span>
+                            <span>{new Date(project.createdAt).toLocaleDateString()}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-6">
-                    <div className="text-right">
-                      <div className="text-sm text-gray-500">Performance Score</div>
-                      <div className="text-lg font-semibold text-gray-900">{project.metrics.score}</div>
-                    </div>
-                    
-                    <div className="text-right">
-                      <div className="text-sm text-gray-500">Visitors</div>
-                      <div className="text-lg font-semibold text-gray-900">{project.metrics.visitors.toLocaleString()}</div>
-                    </div>
-                    
-                    <div className="text-right">
-                      <div className="text-sm text-gray-500">Conversions</div>
-                      <div className="text-lg font-semibold text-gray-900">{project.metrics.conversions}</div>
-                    </div>
-                    
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
-                      {project.status.replace('_', ' ')}
-                    </span>
                     
                     {project.url && (
                       <a
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-700 transition-colors"
+                        className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors bg-blue-50 px-3 py-2 rounded-lg"
                       >
-                        <ExternalLink className="w-5 h-5" />
+                        <span className="text-sm font-medium">View Site</span>
+                        <ExternalLink className="w-4 h-4" />
                       </a>
+                    )}
+                  </div>
+
+                  {/* Metrics Grid */}
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <div className="bg-gray-50 rounded-lg p-3 text-center">
+                      <div className="text-xs text-gray-500 mb-1">Performance Score</div>
+                      <div className="text-lg font-bold text-gray-900">{project.metrics.score}/100</div>
+                    </div>
+                    
+                    <div className="bg-blue-50 rounded-lg p-3 text-center">
+                      <div className="text-xs text-blue-600 mb-1">Visitors</div>
+                      <div className="text-lg font-bold text-blue-900">{project.metrics.visitors.toLocaleString()}</div>
+                    </div>
+                    
+                    <div className="bg-green-50 rounded-lg p-3 text-center">
+                      <div className="text-xs text-green-600 mb-1">Conversions</div>
+                      <div className="text-lg font-bold text-green-900">{project.metrics.conversions}</div>
+                    </div>
+
+                    <div className="bg-purple-50 rounded-lg p-3 text-center">
+                      <div className="text-xs text-purple-600 mb-1">CRO Score</div>
+                      <div className="text-lg font-bold text-purple-900">{project.type === 'optimize' ? '42' : 'N/A'}</div>
+                    </div>
+                    
+                    <div className="bg-yellow-50 rounded-lg p-3 text-center">
+                      <div className="text-xs text-yellow-600 mb-1">Active Tests</div>
+                      <div className="text-lg font-bold text-yellow-900">{project.type === 'optimize' ? '3' : '0'}</div>
+                    </div>
+                  </div>
+
+                  {/* CRO Insights for Optimize Projects */}
+                  {project.type === 'optimize' && (
+                    <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-4">
+                      <h4 className="font-semibold text-purple-800 mb-3 flex items-center">
+                        <span className="text-lg mr-2">🧠</span>
+                        Active CRO Optimizations
+                      </h4>
+                      <div className="grid md:grid-cols-3 gap-4 text-sm">
+                        <div className="bg-white rounded-lg p-3 border border-green-200">
+                          <div className="font-medium text-green-800 mb-1">Quick Win Active</div>
+                          <div className="text-green-700">Added security badges → +12% conversion</div>
+                        </div>
+                        <div className="bg-white rounded-lg p-3 border border-yellow-200">
+                          <div className="font-medium text-yellow-800 mb-1">A/B Test Running</div>
+                          <div className="text-yellow-700">CTA color test → Orange winning +8%</div>
+                        </div>
+                        <div className="bg-white rounded-lg p-3 border border-blue-200">
+                          <div className="font-medium text-blue-800 mb-1">Psychology Analysis</div>
+                          <div className="text-blue-700">Missing urgency triggers detected</div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Status Badge */}
+                  <div className="flex items-center justify-between">
+                    <span className={`px-4 py-2 rounded-full text-sm font-medium ${getStatusColor(project.status)}`}>
+                      {project.status === 'in_progress' ? 'AI Workers Active' : project.status.replace('_', ' ')}
+                    </span>
+                    
+                    {project.type === 'optimize' && (
+                      <div className="flex items-center space-x-3 text-xs text-gray-500">
+                        <span>🔄 The Strategist monitoring</span>
+                        <span>•</span>
+                        <span>📊 Cialdini principles applied</span>
+                        <span>•</span>
+                        <span>🧪 Baymard research active</span>
+                      </div>
                     )}
                   </div>
                 </div>
