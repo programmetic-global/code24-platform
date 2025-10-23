@@ -5,9 +5,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Code24.dev - Your Website Beats Competition Every Day',
-  description: 'Revolutionary AI Worker team that makes your website beat competitors 24/7. BUILD from $99/mo or OPTIMIZE existing sites from $149/mo.',
-  keywords: 'AI workers, website beats competition, competitive advantage, AI website builder, learning website, GEO optimization, AI search engines',
+  title: 'Code24.dev - Your Website Improves Itself 24/7',
+  description: 'Connect any existing site. AI Workers find problems, fix them, then optimize forever. Works with WordPress, Shopify, Wix, Custom Sites. Start $99/mo.',
+  keywords: 'website optimization, AI workers, website improves itself, optimize existing website, WordPress optimization, Shopify optimization, website performance, SEO optimization',
   authors: [{ name: 'Code24.dev Team' }],
   icons: {
     icon: [
@@ -17,16 +17,16 @@ export const metadata: Metadata = {
     apple: '/favicon.svg'
   },
   openGraph: {
-    title: 'Code24.dev - Your Website Beats Competition Every Day',
-    description: 'Revolutionary AI Worker team that makes your website beat competitors 24/7',
+    title: 'Code24.dev - Your Website Improves Itself 24/7',
+    description: 'Connect any existing site. AI Workers find problems, fix them, then optimize forever.',
     url: 'https://staging.code24.dev',
     siteName: 'Code24.dev',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Code24.dev - Your Website Beats Competition Every Day',
-    description: 'Revolutionary AI Worker team that makes your website beat competitors 24/7',
+    title: 'Code24.dev - Your Website Improves Itself 24/7',
+    description: 'Connect any existing site. AI Workers find problems, fix them, then optimize forever.',
   },
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
