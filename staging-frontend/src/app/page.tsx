@@ -90,27 +90,27 @@ const HomePage = () => {
             Your Website Becomes a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 animate-pulse">Living, Learning Machine</span>
           </h1>
           <p className="text-2xl text-gray-600 mb-8 leading-relaxed">
-            While competitors have dead, static sites, yours actively learns from every visitor, adapts to beat competition, and improves itself 24/7. <strong>This isn't optimization - it's evolution.</strong><br/>
+            While competitors have static, lifeless sites, yours actively learns from every visitor, adapts to beat competition, and improves itself 24/7. <strong>This isn't optimization - it's evolution.</strong><br/>
             <span className="text-lg text-gray-500">Works with WordPress, Shopify, Wix, Custom Sites - Everything.</span>
           </p>
 
           {/* Dead vs Living Websites Comparison */}
           <div className="bg-white rounded-3xl shadow-xl p-8 mb-8 max-w-5xl mx-auto border-2 border-gray-100">
             <h3 className="text-3xl font-bold mb-8 text-gray-900 text-center">
-              The Difference Between <span className="text-red-500">Dead</span> and <span className="text-green-500">Living</span> Websites
+              The Difference Between <span className="text-red-500">Static</span> and <span className="text-green-500">Living</span> Websites
             </h3>
             
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Dead Website Column */}
+              {/* Static Website Column */}
               <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-6 border-2 border-red-200">
                 <h4 className="text-2xl font-bold text-red-700 mb-6 text-center flex items-center justify-center">
-                  <span className="text-3xl mr-2">💀</span>
-                  Their Dead Website
+                  <span className="text-3xl mr-2">🧊</span>
+                  Their Frozen Website
                 </h4>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <span className="text-2xl">❌</span>
-                    <span className="text-red-800 font-medium">Built once, frozen forever</span>
+                    <span className="text-red-800 font-medium">Built once, stays frozen</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-2xl">❌</span>
@@ -118,15 +118,15 @@ const HomePage = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-2xl">❌</span>
-                    <span className="text-red-800 font-medium">Falls behind daily</span>
+                    <span className="text-red-800 font-medium">Decays while competitors advance</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-2xl">❌</span>
-                    <span className="text-red-800 font-medium">Needs manual updates</span>
+                    <span className="text-red-800 font-medium">Requires manual updates</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-2xl">❌</span>
-                    <span className="text-red-800 font-medium">Same forever</span>
+                    <span className="text-red-800 font-medium">Remains static forever</span>
                   </div>
                 </div>
               </div>
@@ -195,7 +195,7 @@ const HomePage = () => {
               </div>
             </div>
             
-            <h3 className="text-xl font-semibold mb-4 mt-4">🔍 See If Your Website Is Dead or Alive + Deep CRO Audit</h3>
+            <h3 className="text-xl font-semibold mb-4 mt-4">🔍 Is Your Website Frozen or Dynamic? + Deep CRO Audit</h3>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex-1">
                 <input
@@ -203,7 +203,7 @@ const HomePage = () => {
                   placeholder="Enter your website URL (e.g., yoursite.com)"
                   value={websiteUrl}
                   onChange={(e) => setWebsiteUrl(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                 />
               </div>
               <button
@@ -218,7 +218,7 @@ const HomePage = () => {
                   </>
                 ) : (
                   <>
-                    <span>Dead or Alive Check</span>
+                    <span>Lifeless or Living Check</span>
                     <Search className="w-5 h-5" />
                   </>
                 )}
@@ -449,10 +449,10 @@ const HomePage = () => {
       <section className="py-24 px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-8 text-white">⚰️ The Era of Dead Websites is Over</h2>
+            <h2 className="text-5xl font-bold mb-8 text-white">⚰️ The Era of Static Websites is Over</h2>
             <div className="text-2xl text-gray-300 leading-relaxed space-y-6 max-w-4xl mx-auto">
               <p>
-                For 30 years, websites have been built and left to die. <strong className="text-white">Static. Frozen. Decaying.</strong>
+                For 30 years, websites have been built and left to stagnate. <strong className="text-white">Static. Frozen. Decaying.</strong>
               </p>
               <p>
                 But what if your website could <span className="text-blue-400 font-bold">think?</span> <span className="text-green-400 font-bold">Learn?</span> <span className="text-purple-400 font-bold">Evolve?</span>
@@ -494,7 +494,7 @@ const HomePage = () => {
                   <span className="text-white text-xs">→</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">1. Your Dead Website</h3>
+              <h3 className="text-xl font-semibold mb-3">1. Your Stagnant Website</h3>
               <p className="text-gray-600">We analyze your static, frozen website and identify why it's losing to competitors.</p>
             </div>
 
@@ -625,7 +625,7 @@ const HomePage = () => {
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-gray-900">When Dead Websites Come to Life</h2>
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">When Lifeless Websites Come to Life</h2>
             <p className="text-xl text-gray-600">Real transformations from static to living, learning machines</p>
           </div>
 
@@ -637,7 +637,7 @@ const HomePage = () => {
               <div className="text-center">
                 <div className="text-5xl font-bold text-green-600 mb-2">+340%</div>
                 <div className="text-lg font-semibold text-green-800 mb-4">Conversion Rate</div>
-                <p className="text-green-700">"My website used to be dead - just sitting there. Now it's literally working for me 24/7. It learns what customers want and gives it to them."</p>
+                <p className="text-green-700">"My website used to be lifeless - just sitting there. Now it's literally working for me 24/7. It learns what customers want and gives it to them."</p>
                 <div className="text-sm text-green-600 mt-4 italic">- Sarah, E-commerce Owner</div>
               </div>
             </div>
@@ -671,7 +671,7 @@ const HomePage = () => {
           <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-3xl p-8 text-center">
             <div className="text-2xl mb-4">💚</div>
             <blockquote className="text-2xl font-medium mb-6 italic">
-              "My website used to be dead - just sitting there. Now it's literally working for me 24/7. It's like having an employee that never sleeps and keeps making my business better."
+              "My website used to be stagnant - just sitting there. Now it's literally working for me 24/7. It's like having an employee that never sleeps and keeps making my business better."
             </blockquote>
             <div className="text-lg">
               <div className="font-semibold">Jennifer Martinez</div>
@@ -699,12 +699,12 @@ const HomePage = () => {
             </div>
             
             <div className="text-gray-900 mt-6">
-              <h3 className="text-2xl font-bold mb-4">🧬 Resurrect Your Dead Website</h3>
+              <h3 className="text-2xl font-bold mb-4">🧬 Revive Your Lifeless Website</h3>
               <div className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="url"
-                  placeholder="Enter your dying website URL..."
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  placeholder="Enter your stagnant website URL..."
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                 />
                 <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl font-bold hover:from-green-700 hover:to-blue-700 transition-all transform hover:scale-105">
                   BRING TO LIFE
@@ -712,13 +712,13 @@ const HomePage = () => {
               </div>
               <p className="text-sm text-gray-500 mt-2">14-day trial - Watch your site transform or pay nothing</p>
               <div className="mt-4 text-center">
-                <div className="text-sm text-green-600 font-bold">⚡ Average transformation: Dead → 67% better in 30 days</div>
+                <div className="text-sm text-green-600 font-bold">⚡ Average transformation: Static → 67% better in 30 days</div>
               </div>
             </div>
           </div>
 
-          <div className="text-center text-gray-400">
-            <div className="text-sm">🛡️ Zero risk • 💚 Living website guaranteed • 🚀 Beats competition or free</div>
+          <div className="text-center">
+            <div className="text-sm text-white">🛡️ Zero risk • 💚 Living website guaranteed • 🚀 Beats competition or free</div>
           </div>
         </div>
       </section>

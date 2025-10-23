@@ -414,7 +414,7 @@ const PricingPage = () => {
               }
             ].map((faq, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-semibold mb-3">{faq.question}</h3>
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">{faq.question}</h3>
                 <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
               </div>
             ))}

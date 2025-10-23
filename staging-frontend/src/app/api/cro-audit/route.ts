@@ -361,25 +361,135 @@ function analyzePsychologicalTriggers(html: string) {
   const present: string[] = [];
   const opportunities: string[] = [];
 
-  // Cialdini's 6 Principles Analysis
-  const principles = {
-    authority: ['expert', 'certified', 'award', 'featured'],
-    social_proof: ['customer', 'testimonial', 'review', 'users'],
-    commitment: ['guarantee', 'promise', 'pledge'],
-    liking: ['about', 'team', 'story'],
-    scarcity: ['limited', 'exclusive', 'only'],
-    reciprocity: ['free', 'bonus', 'gift']
-  };
+  // Advanced Scarcity Psychology (Beyond Basic "Limited Time")
+  const scarcityPatterns = [
+    /limited.*time/i, /only.*\d+.*left/i, /expires.*soon/i, 
+    /while.*supplies.*last/i, /exclusive.*offer/i, /one.*time.*only/i,
+    /closing.*soon/i, /spots.*filling.*fast/i, /won.t.*last.*long/i
+  ];
+  if (!scarcityPatterns.some(pattern => pattern.test(html))) {
+    missing.push('Advanced scarcity psychology with urgency multipliers');
+    opportunities.push('Implement dynamic scarcity: "Only 3 spots left in Q4 program (17 already taken today)"');
+  } else {
+    present.push('Scarcity psychology elements detected');
+  }
 
-  Object.entries(principles).forEach(([principle, keywords]) => {
-    const found = keywords.some(keyword => html.toLowerCase().includes(keyword));
-    if (found) {
-      present.push(`${principle.replace('_', ' ')} signals detected`);
-    } else {
-      missing.push(`Missing ${principle.replace('_', ' ')} elements`);
-      opportunities.push(`Add ${principle.replace('_', ' ')} triggers to increase conversions`);
-    }
-  });
+  // Loss Aversion & FOMO Triggers (High-Converting Psychology)
+  const lossAversionTriggers = [
+    /don.t.*miss/i, /before.*it.s.*too.*late/i, /what.*you.re.*missing/i,
+    /competitors.*are.*already/i, /falling.*behind/i, /opportunity.*cost/i,
+    /every.*day.*you.*wait/i, /while.*you.re.*thinking/i, /market.*is.*moving/i
+  ];
+  if (!lossAversionTriggers.some(pattern => pattern.test(html))) {
+    missing.push('Loss aversion psychology (FOMO with competitive stakes)');
+    opportunities.push('Add competitive FOMO: "While you\'re reading this, competitors are gaining market share"');
+  } else {
+    present.push('Loss aversion triggers found');
+  }
+
+  // Authority Positioning (Beyond Basic Credentials)
+  const advancedAuthority = [
+    /featured.*in.*\w+/i, /as.*seen.*on.*\w+/i, /\d+.*years.*experience/i,
+    /trusted.*by.*\d+/i, /worked.*with.*fortune/i, /industry.*leader/i,
+    /award.*winning/i, /recognized.*expert/i, /\#1.*ranked/i
+  ];
+  if (!advancedAuthority.some(pattern => pattern.test(html))) {
+    missing.push('Advanced authority positioning with media credibility');
+    opportunities.push('Add media authority: "Featured in Forbes, Inc. & TechCrunch" or "Trusted by 500+ Fortune companies"');
+  } else {
+    present.push('Authority positioning detected');
+  }
+
+  // Reciprocity Psychology (Value-First Approach)
+  const reciprocityElements = [
+    /free.*\$\d+.*value/i, /complimentary.*worth/i, /no.*obligation.*bonus/i, 
+    /valuable.*resource.*pack/i, /exclusive.*access.*normally/i, /insider.*secrets/i,
+    /blueprint.*worth/i, /template.*valued.*at/i
+  ];
+  if (!reciprocityElements.some(pattern => pattern.test(html))) {
+    missing.push('Advanced reciprocity with quantified value');
+    opportunities.push('Offer high-value freebies: "Free optimization blueprint (normally $297) - yours today"');
+  } else {
+    present.push('Reciprocity psychology detected');
+  }
+
+  // Social Proof Sophistication (Specific Outcomes)
+  const sophisticatedSocialProof = [
+    /\d+[,%]?\s*increase.*in.*\d+/i, /results.*within.*\d+.*days/i, /\$\d+.*additional.*revenue/i,
+    /case.*study.*shows.*\d+/i, /transformed.*\d+.*businesses/i, /proven.*track.*record/i,
+    /success.*story.*\d+/i, /measurable.*results/i
+  ];
+  if (!sophisticatedSocialProof.some(pattern => pattern.test(html))) {
+    missing.push('Sophisticated social proof with measurable outcomes');
+    opportunities.push('Add detailed success metrics: "340% revenue increase in 90 days (verified case study)"');
+  } else {
+    present.push('Advanced social proof with metrics found');
+  }
+
+  // Commitment & Consistency (Risk Reversal)
+  const commitmentTriggers = [
+    /guarantee.*or.*money.*back/i, /results.*or.*refund/i, /risk.*free.*trial/i,
+    /commitment.*to.*your.*success/i, /stand.*behind.*our.*work/i, 
+    /confident.*we.*deliver/i, /promise.*you.ll.*see.*results/i
+  ];
+  if (!commitmentTriggers.some(pattern => pattern.test(html))) {
+    missing.push('Strong commitment psychology with risk reversal');
+    opportunities.push('Add powerful guarantees: "Results guaranteed or we work free until you see them"');
+  } else {
+    present.push('Commitment and risk reversal elements present');
+  }
+
+  // Emotional Urgency (Beyond Time-Based)
+  const emotionalUrgency = [
+    /every.*moment.*counts/i, /opportunity.*window.*closing/i, /market.*advantage/i,
+    /competitive.*edge.*disappearing/i, /first.*mover.*advantage/i, 
+    /innovation.*gap.*widening/i, /transformation.*imperative/i
+  ];
+  if (!emotionalUrgency.some(pattern => pattern.test(html))) {
+    missing.push('Emotional urgency with business stakes');
+    opportunities.push('Add business urgency: "Market leaders are already implementing this - secure your competitive edge"');
+  } else {
+    present.push('Emotional urgency triggers detected');
+  }
+
+  // Curiosity Gaps & Insider Knowledge
+  const curiosityTriggers = [
+    /secret.*method/i, /insider.*technique/i, /little.*known.*strategy/i,
+    /proprietary.*system/i, /exclusive.*methodology/i, /breakthrough.*approach/i,
+    /hidden.*opportunity/i, /undiscovered.*advantage/i
+  ];
+  if (!curiosityTriggers.some(pattern => pattern.test(html))) {
+    missing.push('Curiosity gap psychology with exclusive knowledge positioning');
+    opportunities.push('Add curiosity hooks: "The proprietary method Fortune 500s use (never revealed until now)"');
+  } else {
+    present.push('Curiosity and exclusivity triggers found');
+  }
+
+  // Contrast & Anchoring (Price Psychology)
+  const contrastAnchoring = [
+    /normally.*costs.*\$\d+/i, /agencies.*charge.*\$\d+/i, /traditional.*approach.*costs/i,
+    /fraction.*of.*typical.*cost/i, /\d+x.*less.*than.*competitors/i,
+    /saves.*you.*\$\d+.*annually/i, /roi.*of.*\d+x/i
+  ];
+  if (!contrastAnchoring.some(pattern => pattern.test(html))) {
+    missing.push('Price anchoring and value contrast psychology');
+    opportunities.push('Add price comparisons: "Get what agencies charge $50K+ for - at $149/month"');
+  } else {
+    present.push('Price anchoring and contrast elements present');
+  }
+
+  // Community & Belonging (Advanced Social Psychology)
+  const communityTriggers = [
+    /join.*\d+.*successful/i, /exclusive.*community/i, /elite.*group/i,
+    /inner.*circle/i, /select.*group/i, /proven.*entrepreneurs/i,
+    /network.*of.*achievers/i, /mastermind.*level/i
+  ];
+  if (!communityTriggers.some(pattern => pattern.test(html))) {
+    missing.push('Community psychology and belonging triggers');
+    opportunities.push('Add exclusivity: "Join 500+ successful business owners in our optimization mastermind"');
+  } else {
+    present.push('Community and belonging elements detected');
+  }
 
   return { missing, present, opportunities };
 }
@@ -387,18 +497,45 @@ function analyzePsychologicalTriggers(html: string) {
 function generateCompetitiveAdvantages(businessType?: string, industryType?: string) {
   const advantages = [];
 
+  // Advanced Psychology-Based Features
   advantages.push({
-    title: 'Real-time Purchase Notifications',
-    description: 'Show live purchases to create FOMO effect',
-    impact: '+19% conversion lift',
-    implementation: 'Add notification widget showing recent purchases'
+    title: 'Dynamic Psychological Profiling',
+    description: 'AI analyzes visitor behavior to serve personalized psychological triggers',
+    impact: '+67% conversion lift',
+    implementation: 'Machine learning algorithm detects personality types and adapts messaging',
+    difficulty: 'Advanced - Requires behavioral psychology AI and real-time personalization'
   });
 
   advantages.push({
-    title: 'Abandoned Cart Recovery Sequence',
-    description: '3-email sequence with progressive discounts',
-    impact: '+31% cart recovery',
-    implementation: 'Automated email workflow with personalized offers'
+    title: 'Competitive Intelligence Widgets',
+    description: 'Real-time comparison showing how you outperform competitors',
+    impact: '+43% purchase confidence',
+    implementation: 'Live data feeds comparing your prices, reviews, and features vs competitors',
+    difficulty: 'Complex - Requires competitor monitoring APIs and data visualization'
+  });
+
+  advantages.push({
+    title: 'Social Proof Automation Engine',
+    description: 'Automatically generates and displays social proof based on user activity',
+    impact: '+89% trust signals',
+    implementation: 'AI-powered system creates testimonials, reviews, and social proof from user behavior',
+    difficulty: 'Advanced - Requires natural language generation and sentiment analysis'
+  });
+
+  advantages.push({
+    title: 'Neuromarketing Heat Optimization',
+    description: 'Eye-tracking data optimizes page layouts for maximum visual impact',
+    impact: '+156% attention retention',
+    implementation: 'Neuromarketing research applied to optimize visual hierarchy and attention flow',
+    difficulty: 'Expert Level - Requires neuroscience research and advanced UX psychology'
+  });
+
+  advantages.push({
+    title: 'Behavioral Trigger Sequencing',
+    description: 'Sophisticated sequence of psychological triggers based on user journey stage',
+    impact: '+234% conversion funnel optimization',
+    implementation: 'Multi-step psychological framework with personalized trigger timing',
+    difficulty: 'Master Level - Requires deep psychology expertise and complex automation'
   });
 
   if (businessType === 'ecommerce') {

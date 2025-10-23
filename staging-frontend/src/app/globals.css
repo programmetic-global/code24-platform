@@ -32,7 +32,154 @@
     @apply border-gray-700;
   }
   body {
-    @apply bg-gray-900 text-white;
+    @apply bg-white text-gray-900;
+  }
+  
+  /* Ensure all input elements have proper text visibility */
+  input, textarea {
+    @apply text-gray-900 placeholder-gray-500;
+  }
+  
+  /* Override any conflicting input styles */
+  input:not([type="checkbox"]):not([type="radio"]) {
+    color: #111827 !important;
+  }
+  
+  input::placeholder, textarea::placeholder {
+    color: #6b7280 !important;
+    opacity: 1 !important;
+  }
+  
+  /* Ensure all text elements have proper visibility */
+  h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+  }
+  
+  p, span, div {
+    color: inherit;
+  }
+  
+  /* Light backgrounds need dark text */
+  .bg-white, .bg-white *, 
+  .bg-gray-50, .bg-gray-50 *,
+  .bg-blue-50, .bg-blue-50 *,
+  .bg-green-50, .bg-green-50 *,
+  .bg-yellow-50, .bg-yellow-50 *,
+  .bg-purple-50, .bg-purple-50 *,
+  .bg-pink-50, .bg-pink-50 *,
+  .bg-red-50, .bg-red-50 *,
+  .bg-indigo-50, .bg-indigo-50 * {
+    color: #111827 !important;
+  }
+  
+  /* Dark backgrounds need white text - FORCE OVERRIDE */
+  .bg-gray-900 *:not([class*="text-green"]):not([class*="text-blue"]):not([class*="text-red"]):not([class*="text-yellow"]):not([class*="text-purple"]):not([class*="text-indigo"]):not([class*="text-pink"]),
+  .bg-gray-800 *:not([class*="text-green"]):not([class*="text-blue"]):not([class*="text-red"]):not([class*="text-yellow"]):not([class*="text-purple"]):not([class*="text-indigo"]):not([class*="text-pink"]),
+  .bg-gray-700 *:not([class*="text-green"]):not([class*="text-blue"]):not([class*="text-red"]):not([class*="text-yellow"]):not([class*="text-purple"]):not([class*="text-indigo"]):not([class*="text-pink"]),
+  .bg-black *:not([class*="text-green"]):not([class*="text-blue"]):not([class*="text-red"]):not([class*="text-yellow"]):not([class*="text-purple"]):not([class*="text-indigo"]):not([class*="text-pink"]) {
+    color: #ffffff !important;
+  }
+  
+  /* Gradient dark backgrounds FORCE white text */
+  [class*="bg-gradient-to-"][class*="gray-900"] *:not([class*="text-green"]):not([class*="text-blue"]):not([class*="text-red"]):not([class*="text-yellow"]):not([class*="text-purple"]):not([class*="text-indigo"]):not([class*="text-pink"]),
+  [class*="bg-gradient-to-"][class*="gray-800"] *:not([class*="text-green"]):not([class*="text-blue"]):not([class*="text-red"]):not([class*="text-yellow"]):not([class*="text-purple"]):not([class*="text-indigo"]):not([class*="text-pink"]) {
+    color: #ffffff !important;
+  }
+  
+  /* Override specific gray text colors on dark backgrounds */
+  .bg-gray-900 .text-gray-400,
+  .bg-gray-900 .text-gray-500,
+  .bg-gray-900 .text-gray-600,
+  .bg-gray-800 .text-gray-400,
+  .bg-gray-800 .text-gray-500,
+  .bg-gray-800 .text-gray-600,
+  .bg-gray-700 .text-gray-400,
+  .bg-gray-700 .text-gray-500,
+  .bg-gray-700 .text-gray-600 {
+    color: #d1d5db !important;
+  }
+  
+  /* Override gray text colors in any dark gradient backgrounds */
+  [class*="bg-gradient-to-"][class*="gray-900"] .text-gray-400,
+  [class*="bg-gradient-to-"][class*="gray-900"] .text-gray-500,
+  [class*="bg-gradient-to-"][class*="gray-900"] .text-gray-600,
+  [class*="bg-gradient-to-"][class*="gray-800"] .text-gray-400,
+  [class*="bg-gradient-to-"][class*="gray-800"] .text-gray-500,
+  [class*="bg-gradient-to-"][class*="gray-800"] .text-gray-600 {
+    color: #d1d5db !important;
+  }
+  
+  /* Gradient backgrounds with dark colors need white text */
+  [class*="bg-gradient-to-"][class*="gray-900"],
+  [class*="bg-gradient-to-"][class*="gray-800"],
+  [class*="bg-gradient-to-"][class*="black"] {
+    color: #ffffff !important;
+  }
+  
+  [class*="bg-gradient-to-"][class*="gray-900"] *,
+  [class*="bg-gradient-to-"][class*="gray-800"] *,
+  [class*="bg-gradient-to-"][class*="black"] * {
+    color: #ffffff !important;
+  }
+  
+  /* Specific overrides for light backgrounds */
+  .bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6,
+  .bg-white p, .bg-white span, .bg-white div:not([class*="bg-"]) {
+    color: #111827 !important;
+  }
+  
+  .bg-gray-50 h1, .bg-gray-50 h2, .bg-gray-50 h3, .bg-gray-50 h4, .bg-gray-50 h5, .bg-gray-50 h6,
+  .bg-gray-50 p, .bg-gray-50 span, .bg-gray-50 div:not([class*="bg-"]) {
+    color: #111827 !important;
+  }
+  
+  /* Specific overrides for dark backgrounds */
+  .bg-gray-900 h1, .bg-gray-900 h2, .bg-gray-900 h3, .bg-gray-900 h4, .bg-gray-900 h5, .bg-gray-900 h6,
+  .bg-gray-900 p, .bg-gray-900 span, .bg-gray-900 div:not([class*="bg-"]) {
+    color: #ffffff !important;
+  }
+  
+  .bg-gray-800 h1, .bg-gray-800 h2, .bg-gray-800 h3, .bg-gray-800 h4, .bg-gray-800 h5, .bg-gray-800 h6,
+  .bg-gray-800 p, .bg-gray-800 span, .bg-gray-800 div:not([class*="bg-"]) {
+    color: #ffffff !important;
+  }
+  
+  /* Light colored backgrounds need dark text */
+  [class*="bg-"][class*="50"] h1,
+  [class*="bg-"][class*="50"] h2,
+  [class*="bg-"][class*="50"] h3,
+  [class*="bg-"][class*="50"] h4,
+  [class*="bg-"][class*="50"] h5,
+  [class*="bg-"][class*="50"] h6,
+  [class*="bg-"][class*="50"] p,
+  [class*="bg-"][class*="50"] span,
+  [class*="bg-"][class*="50"] div:not([class*="text-"]):not([class*="bg-"]) {
+    color: #111827 !important;
+  }
+  
+  /* Dark colored backgrounds need white text */
+  [class*="bg-"][class*="900"] h1,
+  [class*="bg-"][class*="900"] h2,
+  [class*="bg-"][class*="900"] h3,
+  [class*="bg-"][class*="900"] h4,
+  [class*="bg-"][class*="900"] h5,
+  [class*="bg-"][class*="900"] h6,
+  [class*="bg-"][class*="900"] p,
+  [class*="bg-"][class*="900"] span,
+  [class*="bg-"][class*="900"] div:not([class*="text-"]):not([class*="bg-"]) {
+    color: #ffffff !important;
+  }
+  
+  [class*="bg-"][class*="800"] h1,
+  [class*="bg-"][class*="800"] h2,
+  [class*="bg-"][class*="800"] h3,
+  [class*="bg-"][class*="800"] h4,
+  [class*="bg-"][class*="800"] h5,
+  [class*="bg-"][class*="800"] h6,
+  [class*="bg-"][class*="800"] p,
+  [class*="bg-"][class*="800"] span,
+  [class*="bg-"][class*="800"] div:not([class*="text-"]):not([class*="bg-"]) {
+    color: #ffffff !important;
   }
 }
 
